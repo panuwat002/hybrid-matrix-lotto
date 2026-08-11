@@ -17,7 +17,7 @@ export function SupportSection() {
           <h3 className="font-thai text-sm font-semibold text-matrix-cyan">
             ถ้าเว็บมีประโยชน์ ช่วยสนับสนุนค่าเซิร์ฟเวอร์ได้ครับ
           </h3>
-          <p className="mt-1 font-thai text-[10px] text-matrix-green/50">
+          <p className="mt-1 font-thai text-[10px] text-matrix-green/70">
             ไม่บังคับ — ระบบใช้งานได้เต็มโดยไม่มีข้อจำกัด 💚
           </p>
         </div>
@@ -55,8 +55,8 @@ export function SupportSection() {
           <p className="mt-3 font-thai text-[11px] text-matrix-cyan/70">
             พร้อมเพย์ • MR PANUWAT SAKUNTEM
           </p>
-          <p className="mt-1 font-thai text-[10px] text-matrix-green/50">
-            5฿, 10฿, 100฿ ก็มีความหมาย
+          <p className="mt-1 font-thai text-[10px] text-matrix-green/70">
+            ฿5 · ฿10 · ฿100 ก็มีความหมาย
           </p>
         </div>
       )}

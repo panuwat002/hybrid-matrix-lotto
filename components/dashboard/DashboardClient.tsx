@@ -26,6 +26,7 @@ export function DashboardClient() {
   const [date, setDate] = useState(defaultDate);
   const [result, setResult] = useState<ResultBundle | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const pickerRef = useRef<HTMLDivElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -34,21 +35,28 @@ export function DashboardClient() {
     }
   }, [result]);
 
+  const scrollToPicker = () => {
+    pickerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <main className="min-h-screen p-6 md:p-12">
-      <div className="mx-auto mb-6 flex max-w-5xl items-center justify-between">
+      <nav className="mx-auto mb-6 flex max-w-5xl items-center justify-between">
         <Link
           href="/"
-          className="font-thai text-sm text-matrix-cyan/70 transition hover:text-matrix-cyan"
+          className="font-thai text-sm text-matrix-cyan/80 transition hover:text-matrix-cyan"
         >
           ← หน้าหลัก
         </Link>
-      </div>
+        <span className="font-mono text-xs uppercase tracking-[0.3em] text-matrix-cyan/60">
+          Hybrid Matrix
+        </span>
+      </nav>
       <h1 className="mb-8 text-center font-mono text-4xl text-matrix-green drop-shadow-[0_0_12px_#00ff9c] md:text-5xl">
         ANALYSIS DASHBOARD
       </h1>
 
-      <div className="mx-auto mb-12 max-w-xl space-y-4">
+      <div ref={pickerRef} className="mx-auto mb-12 max-w-xl space-y-4">
         <DateSelector value={date} onChange={setDate} />
         <GenerateButton
           date={date}
@@ -93,6 +101,14 @@ export function DashboardClient() {
             </div>
           </div>
           <SupportSection />
+          <div className="mx-auto mt-8 max-w-5xl text-center">
+            <button
+              onClick={scrollToPicker}
+              className="font-thai text-sm text-matrix-cyan/80 transition hover:text-matrix-cyan"
+            >
+              ↑ เลือกงวดใหม่
+            </button>
+          </div>
         </div>
       )}
     </main>

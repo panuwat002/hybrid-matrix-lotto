@@ -38,8 +38,8 @@ export default function LandingPage() {
           </p>
 
           <div className="mb-8 inline-flex flex-wrap items-center justify-center gap-2 rounded-lg border border-matrix-cyan/25 bg-matrix-dim/40 px-4 py-2 font-mono text-xs">
-            <span className="text-matrix-cyan/50">$ preview</span>
-            <span className="text-matrix-green/60">D=16082569</span>
+            <span className="text-matrix-cyan/70">$ preview</span>
+            <span className="text-matrix-green/80">D=16082569</span>
             <span className="text-matrix-cyan/40">→</span>
             <span className="text-matrix-green drop-shadow-[0_0_6px_#00ff9c]">
               048139

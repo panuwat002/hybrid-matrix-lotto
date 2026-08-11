@@ -28,7 +28,7 @@ export function ResultHeader({ targetDate, tensionScore, computedAt }: Props) {
           <h2 className="mt-1 font-mono text-2xl text-matrix-green md:text-3xl">
             {formatThaiDate(targetDate)}
           </h2>
-          <p className="mt-1 font-thai text-[11px] text-matrix-green/50">
+          <p className="mt-1 font-thai text-[11px] text-matrix-green/70">
             คำนวณเมื่อ {formatTime(computedAt)} น.
           </p>
         </div>
