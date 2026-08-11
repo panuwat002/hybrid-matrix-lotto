@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import { DateSelector } from "./DateSelector";
 import { GenerateButton } from "./GenerateButton";
 import { ResultCard } from "./ResultCard";
@@ -25,10 +26,25 @@ export function DashboardClient() {
   const [date, setDate] = useState(defaultDate);
   const [result, setResult] = useState<ResultBundle | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (result && resultsRef.current) {
+      resultsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [result]);
 
   return (
     <main className="min-h-screen p-6 md:p-12">
-      <h1 className="mb-8 text-center font-mono text-3xl text-matrix-green drop-shadow-[0_0_10px_#00ff9c]">
+      <div className="mx-auto mb-6 flex max-w-5xl items-center justify-between">
+        <Link
+          href="/"
+          className="font-thai text-sm text-matrix-cyan/70 transition hover:text-matrix-cyan"
+        >
+          ← หน้าหลัก
+        </Link>
+      </div>
+      <h1 className="mb-8 text-center font-mono text-4xl text-matrix-green drop-shadow-[0_0_12px_#00ff9c] md:text-5xl">
         ANALYSIS DASHBOARD
       </h1>
 
@@ -53,7 +69,7 @@ export function DashboardClient() {
       </div>
 
       {result && (
-        <>
+        <div ref={resultsRef}>
           <ResultHeader
             targetDate={result.data.targetDate}
             tensionScore={result.data.tensionScore}
@@ -77,7 +93,7 @@ export function DashboardClient() {
             </div>
           </div>
           <SupportSection />
-        </>
+        </div>
       )}
     </main>
   );

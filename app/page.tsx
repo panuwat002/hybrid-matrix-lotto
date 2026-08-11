@@ -66,7 +66,16 @@ export default function LandingPage() {
       )}
 
       {step === "legal" && (
-        <LegalCheckpoint onAccept={handleAccept} pending={pending} />
+        <div className="mx-auto max-w-2xl">
+          <button
+            onClick={() => setStep("hero")}
+            disabled={pending}
+            className="mb-4 font-thai text-sm text-matrix-cyan/70 transition hover:text-matrix-cyan disabled:opacity-40"
+          >
+            ← กลับ
+          </button>
+          <LegalCheckpoint onAccept={handleAccept} pending={pending} />
+        </div>
       )}
     </main>
   );

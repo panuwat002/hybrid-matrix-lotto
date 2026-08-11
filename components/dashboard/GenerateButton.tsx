@@ -35,9 +35,15 @@ export function GenerateButton({ date, onResult, onError }: Props) {
     <button
       onClick={run}
       disabled={pending || !date}
-      className="w-full py-3 rounded-lg font-mono font-semibold uppercase tracking-widest bg-matrix-green text-matrix-bg disabled:opacity-40 disabled:cursor-not-allowed transition"
+      className="flex w-full items-center justify-center gap-2 rounded-lg bg-matrix-green py-3 font-mono font-semibold uppercase tracking-widest text-matrix-bg transition disabled:cursor-not-allowed disabled:opacity-40"
     >
-      {pending ? "กำลังคำนวณ..." : "รันการวิเคราะห์"}
+      {pending && (
+        <span
+          aria-hidden
+          className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-matrix-bg border-t-transparent"
+        />
+      )}
+      <span>{pending ? "กำลังคำนวณ..." : "รันการวิเคราะห์"}</span>
     </button>
   );
 }
