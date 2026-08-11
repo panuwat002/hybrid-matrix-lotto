@@ -1,0 +1,5 @@
+Contact: mailto:wat03555@gmail.com
+Expires: 2027-08-11T00:00:00.000Z
+Preferred-Languages: th, en
+Canonical: https://YOUR-DOMAIN.example/.well-known/security.txt
+Policy: https://YOUR-DOMAIN.example/privacy
