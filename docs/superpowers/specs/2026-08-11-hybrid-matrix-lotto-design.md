@@ -302,4 +302,22 @@ module.exports = {
 
 ---
 
+## Appendix A — Peer Review Panel (2026-08-11)
+
+The formula was reviewed under the personas of Sir Isaac Newton (physics/rigor), Gottlob Frege (logic/semantics), and Alan Turing (computation/information). Their notes are surfaced verbatim to the end user via `/about` so the epistemic posture of the system is transparent. No formula changes were made — the review confirmed the math does what it claims (deterministic pattern generation) and the honest packaging around it (About page, disclaimer) is the appropriate response, not a rewrite.
+
+Findings preserved as-is (not defects; documentation debts, now paid):
+
+- **B — "Statistical Tension" is a heuristic composite score, not a proven property.** The name is intuitive; the value is `(freq − mean)² × (gap + 1)` per digit. Documented on `/about`.
+- **D — φ³, π, e are aesthetic choices, not derived from first principles.** Any three irrational transcendentals distribute similarly. Documented on `/about`.
+- **E — Tie-break `digit ascending` is a convention, not a statistical property.** Chosen for determinism. Documented on `/about`.
+- **F — `X.pow(Decimal(1).div(3))` is a precision-50 approximation of ∛X, not the exact cube root.** Deterministic across runs. Documented on `/about`.
+- **G — Front-3 Set 1 = `⌊X × 10^15⌋ mod 1000` extracts specific decimal-expansion digits.** Semantically fuzzy but well-defined. Documented on `/about`.
+
+**Non-findings (verified sound):** determinism (A) — reproducible by golden snapshot; disclaimer already truthful — matches information-theoretic reality; reproducibility guarantee — golden snapshot tests in `__tests__/engine/determinism.test.ts`.
+
+**Deliberately deferred:** dropping precision 50 → 15 (Turing's over-engineering point). Kept as belt-and-suspenders; cost is negligible, benefit is a stronger correctness contract.
+
+---
+
 **Next step:** Implementation plan via `superpowers:writing-plans` skill

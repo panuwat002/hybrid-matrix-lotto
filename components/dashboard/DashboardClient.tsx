@@ -41,16 +41,24 @@ export function DashboardClient() {
 
   return (
     <main className="min-h-screen p-6 md:p-12">
-      <nav className="mx-auto mb-6 flex max-w-5xl items-center justify-between">
+      <nav className="mx-auto mb-6 flex max-w-5xl items-center justify-between gap-4">
         <Link
           href="/"
           className="font-thai text-sm text-matrix-cyan/80 transition hover:text-matrix-cyan"
         >
           ← หน้าหลัก
         </Link>
-        <span className="font-mono text-xs uppercase tracking-[0.3em] text-matrix-cyan/60">
-          Hybrid Matrix
-        </span>
+        <div className="flex items-center gap-4">
+          <Link
+            href="/about"
+            className="font-thai text-xs text-matrix-cyan/70 transition hover:text-matrix-cyan"
+          >
+            เกี่ยวกับสูตร
+          </Link>
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-matrix-cyan/60">
+            Hybrid Matrix
+          </span>
+        </div>
       </nav>
       <h1 className="mb-8 text-center font-mono text-4xl text-matrix-green drop-shadow-[0_0_12px_#00ff9c] md:text-5xl">
         ANALYSIS DASHBOARD

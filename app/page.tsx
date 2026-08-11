@@ -62,6 +62,14 @@ export default function LandingPage() {
               เข้าสู่ระบบวิเคราะห์
             </button>
           </div>
+          <div className="mt-6">
+            <a
+              href="/about"
+              className="font-thai text-xs text-matrix-cyan/70 underline-offset-4 transition hover:text-matrix-cyan hover:underline"
+            >
+              อ่านเพิ่มเติมเกี่ยวกับสูตร →
+            </a>
+          </div>
         </section>
       )}
 
