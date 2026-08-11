@@ -10,14 +10,17 @@ vi.mock("next/headers", () => ({
         : undefined,
     set: () => {},
   }),
+  headers: () => new Map([["x-forwarded-for", "127.0.0.1"]]),
 }));
 
 // Import AFTER mock
 import { generateMatrix } from "@/lib/actions/generateMatrix";
+import { __resetRateLimiterForTests } from "@/lib/actions/rateLimit";
 
 describe("generateMatrix action", () => {
   beforeEach(() => {
     mockCookieValue.current = undefined;
+    __resetRateLimiterForTests();
   });
 
   it("throws UNLOCK_REQUIRED when cookie missing", async () => {
@@ -36,5 +39,13 @@ describe("generateMatrix action", () => {
     const r = await generateMatrix("16082569");
     expect(r.targetDate).toBe("16082569");
     expect(r.firstPrize).toMatch(/^\d{6}$/);
+  });
+
+  it("throws RATE_LIMITED after 20 requests in 60s", async () => {
+    mockCookieValue.current = "1";
+    for (let i = 0; i < 20; i++) {
+      await generateMatrix("16082569");
+    }
+    await expect(generateMatrix("16082569")).rejects.toThrow("RATE_LIMITED");
   });
 });

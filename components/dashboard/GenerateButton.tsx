@@ -25,7 +25,9 @@ export function GenerateButton({ date, onResult, onError }: Props) {
             ? "ยังไม่ปลดล็อกระบบ"
             : msg === "INVALID_DATE"
               ? "รูปแบบวันที่ไม่ถูกต้อง"
-              : "เกิดข้อผิดพลาด",
+              : msg === "RATE_LIMITED"
+                ? "เรียกใช้บ่อยเกินไป ลองใหม่ในอีก 1 นาที"
+                : "เกิดข้อผิดพลาด",
         );
       }
     });
