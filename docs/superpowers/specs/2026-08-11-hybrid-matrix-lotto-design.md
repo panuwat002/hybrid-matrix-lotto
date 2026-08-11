@@ -114,7 +114,8 @@ export type HistoricalDraw = {
   tension[d] = (freq[d] - mean)² × (gap[d] + 1)
              = variance-weighted × gap
   
-เลือก top-3 digits โดย tension สูงสุด → concat ตามลำดับ tension → 3-digit integer T
+Sort digits โดย tension descending; **tie-break:** digit value ascending
+เลือก top-3 → concat ตามลำดับผลการ sort → 3-digit integer T (เช่น [7,3,5] → 735)
 S_T = Decimal(T).div(1000)          // normalize เข้า [0, 1)
 ```
 
@@ -139,6 +140,8 @@ X = (D × S_T) × φ³ × π
 - Result `X` เก็บ precision 50 ต่อ
 
 ### Phase 3 — Matrix Extraction
+
+> **Note:** ทุกสูตรด้านล่างใช้ `X` ตัวเดียวกัน = **Decimal ดิบจาก Phase 2** (ก่อน mod หรือ floor ใดๆ) คงค่า precision 50 หลัก
 
 | # | ชุดตัวเลข | สูตร |
 |---|-----------|------|
