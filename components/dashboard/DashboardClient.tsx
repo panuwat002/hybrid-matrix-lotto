@@ -55,6 +55,12 @@ export function DashboardClient() {
           >
             เกี่ยวกับสูตร
           </Link>
+          <Link
+            href="/privacy"
+            className="font-thai text-xs text-matrix-cyan/70 transition hover:text-matrix-cyan"
+          >
+            ความเป็นส่วนตัว
+          </Link>
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-matrix-cyan/60">
             Hybrid Matrix
           </span>

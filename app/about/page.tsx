@@ -155,6 +155,53 @@ export default function AboutPage() {
         </dl>
       </section>
 
+      <section className="mb-10 rounded-xl border border-red-500/30 bg-red-500/5 p-5">
+        <h2 className="mb-4 font-thai text-lg text-red-300">
+          บันทึกด้านความปลอดภัย (Security Notes)
+        </h2>
+        <dl className="space-y-4 font-thai text-sm">
+          <div>
+            <dt className="mb-1 font-semibold text-matrix-green">
+              Cookie ไม่ใช่ระบบยืนยันตัวตน
+            </dt>
+            <dd className="text-matrix-green/75">
+              <code className="text-matrix-cyan">lotto_unlock</code>{" "}
+              เป็น functional cookie แสดงว่าคุณยอมรับ disclaimer
+              ไม่ได้เป็น authentication — ใครก็ตั้งเองใน DevTools ได้
+              เป็น speed bump ไม่ใช่กำแพง
+            </dd>
+          </div>
+          <div>
+            <dt className="mb-1 font-semibold text-matrix-green">
+              ตัวเลข deterministic = enumerable
+            </dt>
+            <dd className="text-matrix-green/75">
+              เนื่องจากสูตรให้ผลลัพธ์เดียวกันเสมอสำหรับ input เดียวกัน
+              ใครก็คำนวณล่วงหน้าทุกวันที่ที่เป็นไปได้เก็บเป็น static table
+              ไม่มี &ldquo;secret&rdquo; ในระบบ — คุณสมบัตินี้เป็นไปตาม design
+              (transparency)
+            </dd>
+          </div>
+          <div>
+            <dt className="mb-1 font-semibold text-matrix-green">
+              การอัปโหลดสลิป (mockup)
+            </dt>
+            <dd className="text-matrix-green/75">
+              หน้าอัปโหลดสลิปในเวอร์ชัน MVP <b>ไม่มีการประมวลผลจริง</b>{" "}
+              — ไฟล์ที่คุณเลือกอยู่ในหน้าจอเบราว์เซอร์เท่านั้น
+              ไม่ถูกส่งไปที่ server หรือ third-party ใดๆ
+            </dd>
+          </div>
+        </dl>
+        <p className="mt-4 font-thai text-xs text-matrix-cyan/70">
+          ดู{" "}
+          <Link href="/privacy" className="underline hover:text-matrix-cyan">
+            นโยบายความเป็นส่วนตัว
+          </Link>{" "}
+          สำหรับรายละเอียดข้อมูลที่เก็บและไม่เก็บ
+        </p>
+      </section>
+
       <section className="mb-10">
         <h2 className="mb-3 font-thai text-lg text-matrix-green">
           Reproducibility Guarantee

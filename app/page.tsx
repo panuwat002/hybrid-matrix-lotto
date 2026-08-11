@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { LegalCheckpoint } from "@/components/gateway/LegalCheckpoint";
 import { confirmUnlock } from "@/lib/actions/confirmUnlock";
 
@@ -85,6 +86,16 @@ export default function LandingPage() {
           <LegalCheckpoint onAccept={handleAccept} pending={pending} />
         </div>
       )}
+
+      <footer className="mx-auto mt-16 flex max-w-2xl items-center justify-center gap-6 border-t border-matrix-cyan/15 pt-4 font-thai text-xs text-matrix-green/70">
+        <Link href="/about" className="transition hover:text-matrix-cyan">
+          เกี่ยวกับสูตร
+        </Link>
+        <span aria-hidden>·</span>
+        <Link href="/privacy" className="transition hover:text-matrix-cyan">
+          นโยบายความเป็นส่วนตัว
+        </Link>
+      </footer>
     </main>
   );
 }
