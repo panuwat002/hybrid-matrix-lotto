@@ -11,9 +11,13 @@ Next.js web app ที่คำนวณชุดตัวเลขสลาก�
 - pnpm 8+
 - On exFAT drives (e.g. Windows external drives): the repo ships a
   `pnpm-workspace.yaml` with `nodeLinker: hoisted` because pnpm's default
-  symlink layout is not supported. Local `pnpm build` may still fail on
-  exFAT with `EISDIR` from Next.js internals — dev server and tests both
-  work, and production builds succeed on Vercel (Linux ext4).
+  symlink layout is not supported. `pnpm dev` uses Turbopack (`--turbo`)
+  by default because Next.js's webpack pipeline hangs on exFAT
+  (`EISDIR` on `readlink` of internal files). Turbopack (Rust-based
+  file I/O) is unaffected. Fallback: `pnpm dev:webpack` if needed on
+  NTFS/ext4.
+- Local `pnpm build` may still fail on exFAT with the same `EISDIR` —
+  production builds succeed on Vercel (Linux ext4).
 
 ## Local Dev
 
