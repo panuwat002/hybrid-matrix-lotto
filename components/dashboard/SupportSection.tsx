@@ -5,9 +5,11 @@ import { useState } from "react";
 /**
  * Soft support CTA — shown ONLY after user has seen a result.
  * Not a gate. Not required. Collapsible.
+ * Image gracefully falls back to a placeholder when the file is missing.
  */
 export function SupportSection() {
   const [open, setOpen] = useState(true);
+  const [imgOk, setImgOk] = useState(true);
 
   return (
     <section className="max-w-md mx-auto mt-12 rounded-2xl border border-matrix-cyan/25 bg-matrix-dim/50 p-5 text-center">
@@ -31,15 +33,29 @@ export function SupportSection() {
 
       {open && (
         <div className="mt-4">
-          <div className="mx-auto w-64 rounded-lg bg-white p-2 shadow-[0_0_25px_-10px_#00d4ff]">
-            {/* User saves their PromptPay QR to public/support-qr.png */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/support-qr.png"
-              alt="PromptPay QR — MR PANUWAT SAKUNTEM"
-              className="w-full h-auto block"
-            />
-          </div>
+          {imgOk ? (
+            <div className="mx-auto w-64 rounded-lg bg-white p-2 shadow-[0_0_25px_-10px_#00d4ff]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/support-qr.png"
+                alt="PromptPay QR — MR PANUWAT SAKUNTEM"
+                className="w-full h-auto block"
+                onError={() => setImgOk(false)}
+              />
+            </div>
+          ) : (
+            <div className="mx-auto w-64 h-64 rounded-lg border-2 border-dashed border-matrix-cyan/40 bg-matrix-dim/60 flex flex-col items-center justify-center p-4">
+              <div className="text-matrix-cyan text-3xl mb-2">📷</div>
+              <p className="font-thai text-xs text-matrix-cyan/80 leading-relaxed">
+                ยังไม่มีรูป QR
+              </p>
+              <p className="font-mono text-[10px] text-matrix-green/60 mt-2">
+                วางไฟล์ที่
+                <br />
+                <code className="text-matrix-green">public/support-qr.png</code>
+              </p>
+            </div>
+          )}
           <p className="mt-3 font-thai text-xs text-matrix-cyan/80">
             พร้อมเพย์ • MR PANUWAT SAKUNTEM
           </p>
