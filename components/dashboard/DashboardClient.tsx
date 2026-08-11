@@ -4,38 +4,40 @@ import { useState } from "react";
 import { DateSelector } from "./DateSelector";
 import { GenerateButton } from "./GenerateButton";
 import { ResultCard } from "./ResultCard";
+import { FeaturedPrize } from "./FeaturedPrize";
+import { ResultHeader } from "./ResultHeader";
 import { SupportSection } from "./SupportSection";
 import type { MatrixResult } from "@/lib/types";
 
 function defaultDate(): string {
-  // งวดถัดไป: 1 หรือ 16 ของเดือน
   const now = new Date();
   const day = now.getDate() >= 16 ? "01" : "16";
   const monthIdx = now.getDate() >= 16 ? now.getMonth() + 1 : now.getMonth();
   const month = ((monthIdx % 12) + 1).toString().padStart(2, "0");
-  const yearBumps =
-    now.getDate() >= 16 && now.getMonth() === 11 ? 1 : 0;
+  const yearBumps = now.getDate() >= 16 && now.getMonth() === 11 ? 1 : 0;
   const year = now.getFullYear() + 543 + yearBumps;
   return `${day}${month}${year}`;
 }
 
+type ResultBundle = { data: MatrixResult; computedAt: Date };
+
 export function DashboardClient() {
   const [date, setDate] = useState(defaultDate);
-  const [result, setResult] = useState<MatrixResult | null>(null);
+  const [result, setResult] = useState<ResultBundle | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   return (
     <main className="min-h-screen p-6 md:p-12">
-      <h1 className="font-mono text-3xl text-matrix-green drop-shadow-[0_0_10px_#00ff9c] text-center mb-8">
+      <h1 className="mb-8 text-center font-mono text-3xl text-matrix-green drop-shadow-[0_0_10px_#00ff9c]">
         ANALYSIS DASHBOARD
       </h1>
 
-      <div className="max-w-xl mx-auto space-y-4 mb-12">
+      <div className="mx-auto mb-12 max-w-xl space-y-4">
         <DateSelector value={date} onChange={setDate} />
         <GenerateButton
           date={date}
           onResult={(r) => {
-            setResult(r);
+            setResult({ data: r, computedAt: new Date() });
             setError(null);
           }}
           onError={(e) => {
@@ -44,7 +46,7 @@ export function DashboardClient() {
           }}
         />
         {error && (
-          <div className="rounded-lg border border-red-500/50 bg-red-500/10 p-3 text-red-300 font-thai text-sm">
+          <div className="rounded-lg border border-red-500/50 bg-red-500/10 p-3 font-thai text-sm text-red-300">
             {error}
           </div>
         )}
@@ -52,32 +54,27 @@ export function DashboardClient() {
 
       {result && (
         <>
-          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <ResultCard
-              title="รางวัลที่ 1"
-              numbers={[result.firstPrize]}
-              tension={result.tensionScore}
+          <ResultHeader
+            targetDate={result.data.targetDate}
+            tensionScore={result.data.tensionScore}
+            computedAt={result.computedAt}
+          />
+          <div className="mx-auto max-w-5xl space-y-4">
+            <FeaturedPrize
+              firstPrize={result.data.firstPrize}
+              adjacent={result.data.adjacent}
             />
-            <ResultCard
-              title="ข้างเคียงรางวัลที่ 1"
-              numbers={result.adjacent}
-              tension={result.tensionScore}
-            />
-            <ResultCard
-              title="เลขหน้า 3 ตัว"
-              numbers={result.frontThree}
-              tension={result.tensionScore}
-            />
-            <ResultCard
-              title="เลขท้าย 3 ตัว"
-              numbers={result.backThree}
-              tension={result.tensionScore}
-            />
-            <ResultCard
-              title="เลขท้าย 2 ตัว"
-              numbers={[result.backTwo]}
-              tension={result.tensionScore}
-            />
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+              <ResultCard
+                title="เลขหน้า 3 ตัว"
+                numbers={result.data.frontThree}
+              />
+              <ResultCard
+                title="เลขท้าย 3 ตัว"
+                numbers={result.data.backThree}
+              />
+              <ResultCard title="เลขท้าย 2 ตัว" numbers={[result.data.backTwo]} />
+            </div>
           </div>
           <SupportSection />
         </>
