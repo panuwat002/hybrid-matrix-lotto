@@ -1,0 +1,26 @@
+{
+  "extends": "next/core-web-vitals",
+  "overrides": [
+    {
+      "files": ["components/**/*.{ts,tsx}", "app/**/*.tsx"],
+      "excludedFiles": ["app/**/route.ts"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["@/lib/engine", "@/lib/engine/*"],
+                "message": "Engine ต้องเรียกผ่าน @/lib/actions/* เท่านั้น"
+              },
+              {
+                "group": ["@/lib/session/*"],
+                "message": "Session helpers ต้องเรียกจาก server action หรือ server component เท่านั้น"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

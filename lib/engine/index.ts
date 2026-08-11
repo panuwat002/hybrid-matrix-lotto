@@ -1,3 +1,4 @@
+import "server-only";
 import type { DrawDate, MatrixResult } from "@/lib/types";
 import HISTORICAL from "@/lib/data/historical.json";
 import { computeStatisticalTension } from "./statisticalTension";
