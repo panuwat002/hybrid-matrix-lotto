@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`determinism (golden snapshot) > full snapshot for 16082569 stays stable 1`] = `
+{
+  "adjacent": [
+    "048138",
+    "048140",
+  ],
+  "backThree": [
+    "172",
+    "299",
+  ],
+  "backTwo": "53",
+  "firstPrize": "048139",
+  "frontThree": [
+    "834",
+    "154",
+  ],
+  "targetDate": "16082569",
+  "tensionScore": 12.5,
+}
+`;
