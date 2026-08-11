@@ -2,10 +2,18 @@
 
 import { useState } from "react";
 
-type Props = { text: string };
+type Props = {
+  text: string;
+  size?: "sm" | "lg";
+};
 type State = "idle" | "copied" | "failed";
 
-export function CopyButton({ text }: Props) {
+const SIZE_CLASSES: Record<NonNullable<Props["size"]>, string> = {
+  sm: "px-2 py-1 text-[10px]",
+  lg: "px-3 py-1.5 text-xs",
+};
+
+export function CopyButton({ text, size = "sm" }: Props) {
   const [state, setState] = useState<State>("idle");
 
   const copy = async () => {
@@ -30,7 +38,7 @@ export function CopyButton({ text }: Props) {
   return (
     <button
       onClick={copy}
-      className={`ml-2 rounded border px-2 py-1 font-mono text-[10px] uppercase tracking-wider transition ${tone}`}
+      className={`ml-2 rounded border font-mono uppercase tracking-wider transition ${SIZE_CLASSES[size]} ${tone}`}
       aria-label={`Copy ${text}`}
     >
       {label}

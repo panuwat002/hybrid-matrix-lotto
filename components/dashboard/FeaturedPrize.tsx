@@ -24,7 +24,7 @@ export function FeaturedPrize({ firstPrize, adjacent }: Props) {
         <span className="font-mono text-6xl tabular-nums text-matrix-green drop-shadow-[0_0_18px_#00ff9c] md:text-7xl">
           {groupDigits(firstPrize)}
         </span>
-        <CopyButton text={firstPrize} />
+        <CopyButton text={firstPrize} size="lg" />
       </div>
 
       <div className="mt-6 border-t border-matrix-cyan/20 pt-4">
