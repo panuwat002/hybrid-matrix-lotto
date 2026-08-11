@@ -9,7 +9,10 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "audit": "pnpm audit --prod",
+    "audit:full": "pnpm audit",
+    "outdated": "pnpm outdated"
   },
   "dependencies": {
     "decimal.js": "^10.4.3",

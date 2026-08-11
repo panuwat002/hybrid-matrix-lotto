@@ -59,3 +59,37 @@ for the full design (Phase 1–3 formulas, isolation rules, Q1–Q3 decisions).
 
 Input `targetDate` เดียวกัน → output ตัวเลขเดียวกันเสมอ ตรวจสอบได้ด้วย
 `__tests__/engine/determinism.test.ts` (golden snapshot 5 dates)
+
+## Security
+
+### Dependency scanning
+
+    pnpm audit         # prod deps only
+    pnpm audit:full    # all deps
+    pnpm outdated      # version drift check
+
+Recommend running before every deploy. In CI, wire either
+`pnpm audit --prod --audit-level high` (fails build on high+) or
+GitHub Dependabot / renovate for scheduled PRs.
+
+### Disclosure
+
+Vulnerability reports: see `/.well-known/security.txt` at the deployed
+domain, or `public/.well-known/security.txt` in the repo.
+
+### Rate limit
+
+`generateMatrix` is capped at 20 requests/minute/IP via an in-process
+sliding window. Vercel warm instances don't share memory, so under
+distributed load the effective cap is per-instance. For a strict cap,
+wire Vercel KV or `@upstash/ratelimit`.
+
+### Cookie
+
+The `lotto_unlock` cookie is a soft gate, not authentication —
+documented on `/about`. Setting it manually via DevTools bypasses
+the legal checkpoint; this is by design of the MVP mockup.
+
+### Threat model
+
+Full peer review + threat model: `docs/security/threat-model.md`.
