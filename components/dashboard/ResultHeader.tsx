@@ -1,26 +1,13 @@
 "use client";
 
 import type { DrawDate } from "@/lib/types";
+import { formatThaiDate } from "@/lib/format";
 
 type Props = {
   targetDate: DrawDate;
   tensionScore: number;
   computedAt: Date;
 };
-
-const THAI_MONTHS_SHORT = [
-  "ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.",
-  "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค.",
-];
-
-function formatThaiDate(be: DrawDate): string {
-  if (!/^\d{8}$/.test(be)) return be;
-  const day = Number(be.slice(0, 2));
-  const monthIdx = Number(be.slice(2, 4)) - 1;
-  const yearBe = be.slice(4, 8);
-  const monthName = THAI_MONTHS_SHORT[monthIdx] ?? be.slice(2, 4);
-  return `${day} ${monthName} ${yearBe}`;
-}
 
 function formatTime(d: Date): string {
   const hh = d.getHours().toString().padStart(2, "0");

@@ -1,4 +1,5 @@
 import { CopyButton } from "./CopyButton";
+import { groupDigits } from "@/lib/format";
 
 type Props = {
   firstPrize: string;
@@ -7,7 +8,7 @@ type Props = {
 
 export function FeaturedPrize({ firstPrize, adjacent }: Props) {
   return (
-    <article className="relative overflow-hidden rounded-2xl border-2 border-matrix-green/50 bg-gradient-to-br from-matrix-dim/80 to-matrix-bg p-6 md:p-8 shadow-[0_0_60px_-15px_#00ff9c]">
+    <article className="card-in relative overflow-hidden rounded-2xl border-2 border-matrix-green/50 bg-gradient-to-br from-matrix-dim/80 to-matrix-bg p-6 md:p-8 shadow-[0_0_60px_-15px_#00ff9c]">
       <span
         aria-hidden
         className="pointer-events-none absolute -top-4 right-2 select-none font-mono text-[9rem] leading-none text-matrix-green/[0.04] md:text-[13rem]"
@@ -21,7 +22,7 @@ export function FeaturedPrize({ firstPrize, adjacent }: Props) {
 
       <div className="mt-3 flex flex-wrap items-center justify-between gap-4">
         <span className="font-mono text-6xl tabular-nums text-matrix-green drop-shadow-[0_0_18px_#00ff9c] md:text-7xl">
-          {firstPrize}
+          {groupDigits(firstPrize)}
         </span>
         <CopyButton text={firstPrize} />
       </div>
@@ -37,7 +38,7 @@ export function FeaturedPrize({ firstPrize, adjacent }: Props) {
               className="flex items-center justify-between rounded-lg bg-matrix-bg/40 px-4 py-2"
             >
               <span className="font-mono text-2xl tabular-nums text-matrix-green/90">
-                {n}
+                {groupDigits(n)}
               </span>
               <CopyButton text={n} />
             </div>

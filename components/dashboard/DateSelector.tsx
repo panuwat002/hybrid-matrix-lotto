@@ -1,5 +1,7 @@
 "use client";
 
+import { formatThaiDate } from "@/lib/format";
+
 type Props = {
   value: string; // "DDMMYYYY" BE
   onChange: (v: string) => void;
@@ -34,8 +36,8 @@ export function DateSelector({ value, onChange }: Props) {
         onChange={(e) => onChange(isoToBe(e.target.value))}
         className="w-full rounded-lg bg-matrix-dim border border-matrix-cyan/40 px-4 py-3 font-mono text-matrix-green focus:border-matrix-cyan focus:outline-none"
       />
-      <span className="font-mono text-xs text-matrix-green/60 mt-1 block">
-        รูปแบบ: {value || "DDMMYYYY"}
+      <span className="font-thai text-xs text-matrix-green/70 mt-1 block">
+        งวด: {value ? formatThaiDate(value) : "ยังไม่ได้เลือก"}
       </span>
     </label>
   );
