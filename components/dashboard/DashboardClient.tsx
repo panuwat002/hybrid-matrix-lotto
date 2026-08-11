@@ -4,6 +4,7 @@ import { useState } from "react";
 import { DateSelector } from "./DateSelector";
 import { GenerateButton } from "./GenerateButton";
 import { ResultCard } from "./ResultCard";
+import { SupportSection } from "./SupportSection";
 import type { MatrixResult } from "@/lib/types";
 
 function defaultDate(): string {
@@ -50,33 +51,36 @@ export function DashboardClient() {
       </div>
 
       {result && (
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <ResultCard
-            title="รางวัลที่ 1"
-            numbers={[result.firstPrize]}
-            tension={result.tensionScore}
-          />
-          <ResultCard
-            title="ข้างเคียงรางวัลที่ 1"
-            numbers={result.adjacent}
-            tension={result.tensionScore}
-          />
-          <ResultCard
-            title="เลขหน้า 3 ตัว"
-            numbers={result.frontThree}
-            tension={result.tensionScore}
-          />
-          <ResultCard
-            title="เลขท้าย 3 ตัว"
-            numbers={result.backThree}
-            tension={result.tensionScore}
-          />
-          <ResultCard
-            title="เลขท้าย 2 ตัว"
-            numbers={[result.backTwo]}
-            tension={result.tensionScore}
-          />
-        </div>
+        <>
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <ResultCard
+              title="รางวัลที่ 1"
+              numbers={[result.firstPrize]}
+              tension={result.tensionScore}
+            />
+            <ResultCard
+              title="ข้างเคียงรางวัลที่ 1"
+              numbers={result.adjacent}
+              tension={result.tensionScore}
+            />
+            <ResultCard
+              title="เลขหน้า 3 ตัว"
+              numbers={result.frontThree}
+              tension={result.tensionScore}
+            />
+            <ResultCard
+              title="เลขท้าย 3 ตัว"
+              numbers={result.backThree}
+              tension={result.tensionScore}
+            />
+            <ResultCard
+              title="เลขท้าย 2 ตัว"
+              numbers={[result.backTwo]}
+              tension={result.tensionScore}
+            />
+          </div>
+          <SupportSection />
+        </>
       )}
     </main>
   );

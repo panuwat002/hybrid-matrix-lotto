@@ -2,10 +2,14 @@
 
 import { useState } from "react";
 
-type Props = { onAccept: () => void };
+type Props = {
+  onAccept: () => void;
+  pending?: boolean;
+};
 
-export function LegalCheckpoint({ onAccept }: Props) {
+export function LegalCheckpoint({ onAccept, pending = false }: Props) {
   const [checked, setChecked] = useState(false);
+  const disabled = !checked || pending;
 
   return (
     <section className="max-w-2xl mx-auto rounded-2xl border border-matrix-cyan/30 bg-matrix-dim/60 p-6 shadow-[0_0_40px_-10px_#00d4ff]">
@@ -26,6 +30,7 @@ export function LegalCheckpoint({ onAccept }: Props) {
           checked={checked}
           onChange={(e) => setChecked(e.target.checked)}
           className="mt-1 h-5 w-5 accent-matrix-green cursor-pointer"
+          disabled={pending}
         />
         <span className="font-thai text-sm">
           ฉันได้อ่านและยอมรับเงื่อนไขข้างต้น
@@ -33,10 +38,10 @@ export function LegalCheckpoint({ onAccept }: Props) {
       </label>
       <button
         onClick={onAccept}
-        disabled={!checked}
+        disabled={disabled}
         className="mt-6 w-full py-3 rounded-lg font-mono font-semibold uppercase tracking-widest bg-matrix-green text-matrix-bg disabled:bg-matrix-dim disabled:text-matrix-green/40 disabled:cursor-not-allowed transition"
       >
-        ถัดไป
+        {pending ? "กำลังเข้าสู่ระบบ..." : "เข้าสู่ Dashboard"}
       </button>
     </section>
   );

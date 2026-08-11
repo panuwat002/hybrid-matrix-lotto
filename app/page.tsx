@@ -1,13 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
 import { LegalCheckpoint } from "@/components/gateway/LegalCheckpoint";
-import { PaymentMockup } from "@/components/gateway/PaymentMockup";
+import { confirmUnlock } from "@/lib/actions/confirmUnlock";
 
-type Step = "hero" | "legal" | "payment";
+type Step = "hero" | "legal";
 
 export default function LandingPage() {
+  const router = useRouter();
   const [step, setStep] = useState<Step>("hero");
+  const [pending, startTransition] = useTransition();
+
+  const handleAccept = () => {
+    startTransition(async () => {
+      await confirmUnlock();
+      router.push("/dashboard");
+    });
+  };
 
   return (
     <main className="min-h-screen p-6 md:p-12">
@@ -35,9 +45,9 @@ export default function LandingPage() {
         </section>
       )}
 
-      {step === "legal" && <LegalCheckpoint onAccept={() => setStep("payment")} />}
-
-      {step === "payment" && <PaymentMockup />}
+      {step === "legal" && (
+        <LegalCheckpoint onAccept={handleAccept} pending={pending} />
+      )}
     </main>
   );
 }
