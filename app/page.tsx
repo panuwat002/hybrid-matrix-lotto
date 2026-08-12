@@ -4,6 +4,7 @@ import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { LegalCheckpoint } from "@/components/gateway/LegalCheckpoint";
+import { VisitorCounter } from "@/components/analytics/VisitorCounter";
 import { confirmUnlock } from "@/lib/actions/confirmUnlock";
 
 type Step = "hero" | "legal";
@@ -87,7 +88,7 @@ export default function LandingPage() {
         </div>
       )}
 
-      <footer className="mx-auto mt-16 flex max-w-2xl items-center justify-center gap-6 border-t border-matrix-cyan/15 pt-4 font-thai text-xs text-matrix-green/70">
+      <footer className="mx-auto mt-16 flex max-w-3xl flex-wrap items-center justify-center gap-4 border-t border-matrix-cyan/15 pt-4 font-thai text-xs text-matrix-green/70 md:gap-6">
         <Link href="/about" className="transition hover:text-matrix-cyan">
           เกี่ยวกับสูตร
         </Link>
@@ -95,6 +96,8 @@ export default function LandingPage() {
         <Link href="/privacy" className="transition hover:text-matrix-cyan">
           นโยบายความเป็นส่วนตัว
         </Link>
+        <span aria-hidden>·</span>
+        <VisitorCounter />
       </footer>
     </main>
   );
