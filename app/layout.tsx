@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, IBM_Plex_Sans_Thai } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
@@ -17,7 +18,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="th" className={`${mono.variable} ${thai.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
