@@ -6,6 +6,7 @@ import Link from "next/link";
 import { LegalCheckpoint } from "@/components/gateway/LegalCheckpoint";
 import { VisitorCounter } from "@/components/analytics/VisitorCounter";
 import { confirmUnlock } from "@/lib/actions/confirmUnlock";
+import { trackEvent } from "@/lib/analytics/events";
 
 type Step = "hero" | "legal";
 
@@ -58,7 +59,10 @@ export default function LandingPage() {
 
           <div>
             <button
-              onClick={() => setStep("legal")}
+              onClick={() => {
+                trackEvent("hero_enter");
+                setStep("legal");
+              }}
               className="rounded-lg bg-matrix-green px-8 py-3 font-mono uppercase tracking-widest text-matrix-bg transition hover:shadow-[0_0_25px_#00ff9c]"
             >
               เข้าสู่ระบบวิเคราะห์
@@ -78,7 +82,10 @@ export default function LandingPage() {
       {step === "legal" && (
         <div className="mx-auto max-w-2xl">
           <button
-            onClick={() => setStep("hero")}
+            onClick={() => {
+              trackEvent("legal_back");
+              setStep("hero");
+            }}
             disabled={pending}
             className="mb-4 font-thai text-sm text-matrix-cyan/70 transition hover:text-matrix-cyan disabled:opacity-40"
           >

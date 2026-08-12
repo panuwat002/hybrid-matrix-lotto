@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics/events";
 
 type Props = {
   onAccept: () => void;
@@ -37,7 +38,10 @@ export function LegalCheckpoint({ onAccept, pending = false }: Props) {
         </span>
       </label>
       <button
-        onClick={onAccept}
+        onClick={() => {
+          trackEvent("legal_accept");
+          onAccept();
+        }}
         disabled={disabled}
         className="mt-6 w-full py-3 rounded-lg font-mono font-semibold uppercase tracking-widest bg-matrix-green text-matrix-bg disabled:bg-matrix-dim disabled:text-matrix-green/40 disabled:cursor-not-allowed transition"
       >

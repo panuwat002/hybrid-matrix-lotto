@@ -8,6 +8,7 @@ import { ResultCard } from "./ResultCard";
 import { FeaturedPrize } from "./FeaturedPrize";
 import { ResultHeader } from "./ResultHeader";
 import { SupportSection } from "./SupportSection";
+import { trackEvent } from "@/lib/analytics/events";
 import type { MatrixResult } from "@/lib/types";
 
 function defaultDate(): string {
@@ -36,6 +37,7 @@ export function DashboardClient() {
   }, [result]);
 
   const scrollToPicker = () => {
+    trackEvent("picker_scrollback");
     pickerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
@@ -106,12 +108,18 @@ export function DashboardClient() {
               <ResultCard
                 title="เลขหน้า 3 ตัว"
                 numbers={result.data.frontThree}
+                kind="front3"
               />
               <ResultCard
                 title="เลขท้าย 3 ตัว"
                 numbers={result.data.backThree}
+                kind="back3"
               />
-              <ResultCard title="เลขท้าย 2 ตัว" numbers={[result.data.backTwo]} />
+              <ResultCard
+                title="เลขท้าย 2 ตัว"
+                numbers={[result.data.backTwo]}
+                kind="back2"
+              />
             </div>
           </div>
           <SupportSection />

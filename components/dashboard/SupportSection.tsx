@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics/events";
 
 /**
  * Soft support CTA — shown ONLY after user has seen a result.
@@ -22,7 +23,12 @@ export function SupportSection() {
           </p>
         </div>
         <button
-          onClick={() => setOpen((v) => !v)}
+          onClick={() =>
+            setOpen((v) => {
+              if (!v) trackEvent("support_qr_open");
+              return !v;
+            })
+          }
           aria-expanded={open}
           className="shrink-0 rounded border border-matrix-cyan/40 px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-matrix-cyan transition hover:bg-matrix-cyan/10"
         >

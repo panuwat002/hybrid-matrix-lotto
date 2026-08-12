@@ -1,9 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics/events";
+
+type CopyKind = "prize1" | "adjacent" | "front3" | "back3" | "back2";
 
 type Props = {
   text: string;
+  kind: CopyKind;
   size?: "sm" | "lg";
 };
 type State = "idle" | "copied" | "failed";
@@ -13,7 +17,7 @@ const SIZE_CLASSES: Record<NonNullable<Props["size"]>, string> = {
   lg: "px-3 py-1.5 text-xs",
 };
 
-export function CopyButton({ text, size = "sm" }: Props) {
+export function CopyButton({ text, kind, size = "sm" }: Props) {
   const [state, setState] = useState<State>("idle");
 
   const copy = async () => {
@@ -21,6 +25,7 @@ export function CopyButton({ text, size = "sm" }: Props) {
       if (!navigator.clipboard) throw new Error("clipboard unavailable");
       await navigator.clipboard.writeText(text);
       setState("copied");
+      trackEvent("number_copied", { kind });
     } catch {
       setState("failed");
     } finally {

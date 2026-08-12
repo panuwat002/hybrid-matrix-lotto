@@ -4,9 +4,10 @@ import { groupDigits } from "@/lib/format";
 type Props = {
   title: string;
   numbers: string[];
+  kind: "front3" | "back3" | "back2";
 };
 
-export function ResultCard({ title, numbers }: Props) {
+export function ResultCard({ title, numbers, kind }: Props) {
   return (
     <article className="card-in rounded-xl border border-matrix-green/30 bg-matrix-dim/70 p-5 shadow-[0_0_20px_-8px_#00ff9c]">
       <h3 className="mb-3 font-thai text-xs uppercase tracking-[0.25em] text-matrix-cyan">
@@ -18,7 +19,7 @@ export function ResultCard({ title, numbers }: Props) {
             <span className="font-mono text-3xl tabular-nums text-matrix-green drop-shadow-[0_0_8px_#00ff9c]">
               {groupDigits(n)}
             </span>
-            <CopyButton text={n} />
+            <CopyButton text={n} kind={kind} />
           </li>
         ))}
       </ul>
