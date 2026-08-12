@@ -15,6 +15,10 @@
               {
                 "group": ["@/lib/session", "@/lib/session/*"],
                 "message": "Session helpers ต้องเรียกจาก server action หรือ server component (app/**/page.tsx, layout.tsx) เท่านั้น"
+              },
+              {
+                "group": ["@/lib/analytics/upstash"],
+                "message": "Upstash client is server-only. Call via @/app/api/counter/route.ts only."
               }
             ]
           }
