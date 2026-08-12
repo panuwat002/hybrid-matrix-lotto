@@ -188,7 +188,19 @@ export async function POST(req: NextRequest) {
 }
 ```
 
-*Note:* `enforceRateLimit` signature must be extended to accept `{ limit, windowMs, bucket }` optional overrides (existing default remains `20/60_000/"default"`). Change goes in Task alongside this route.
+*Note — code migration required:* the existing `lib/actions/rateLimit.ts` currently exposes `enforceRateLimit(ip: string): void` with hard-coded `WINDOW_MS=60_000` and `MAX_PER_WINDOW=20`, backed by a single in-memory `Map<string, number[]>`. To support both the existing `generateMatrix` cap (20/min) and the counter's tighter cap (5/min) without cross-contamination, extend the module to:
+
+```typescript
+type RateLimitOptions = { limit?: number; windowMs?: number; bucket?: string };
+export function enforceRateLimit(ip: string, opts?: RateLimitOptions): void;
+```
+
+- Default `limit=20`, `windowMs=60_000`, `bucket="default"` — keeps `generateMatrix` behavior unchanged (no call-site edit needed there).
+- Replace the single `Map` with `Map<string, Map<string, number[]>>` keyed by `bucket → ip → timestamps`, or equivalently namespace the key as `` `${bucket}:${ip}` ``. Simplest = key namespacing.
+- Update `__resetRateLimiterForTests()` to clear the whole map.
+- Existing rateLimit test suite must still pass unchanged (calls without opts default to the same behavior).
+
+The migration is a small self-contained task in the implementation plan; the counter API route above assumes the extended signature is available.
 
 ### Route path convention
 - `GET /api/counter` — read total (safe to call any time)
