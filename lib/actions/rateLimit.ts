@@ -1,13 +1,18 @@
 import "server-only";
 import { headers } from "next/headers";
 
-const WINDOW_MS = 60_000;
-const MAX_PER_WINDOW = 20;
+const DEFAULT_WINDOW_MS = 60_000;
+const DEFAULT_MAX_PER_WINDOW = 20;
+const DEFAULT_BUCKET = "default";
 
-// In-memory per-warm-instance. Vercel serverless has multiple warm
-// instances so this is a soft cap, not a strict one. For a strict
-// cap use Vercel KV / @upstash/ratelimit. Documented in README.
+// key = `${bucket}:${ip}`  →  timestamps
 const requestLog = new Map<string, number[]>();
+
+export type RateLimitOptions = {
+  limit?: number;
+  windowMs?: number;
+  bucket?: string;
+};
 
 export function getClientIp(): string {
   const h = headers();
@@ -18,15 +23,23 @@ export function getClientIp(): string {
   return "unknown";
 }
 
-export function enforceRateLimit(ip: string): void {
+export function enforceRateLimit(
+  ip: string,
+  opts: RateLimitOptions = {},
+): void {
+  const limit = opts.limit ?? DEFAULT_MAX_PER_WINDOW;
+  const windowMs = opts.windowMs ?? DEFAULT_WINDOW_MS;
+  const bucket = opts.bucket ?? DEFAULT_BUCKET;
+  const key = `${bucket}:${ip}`;
+
   const now = Date.now();
-  const prior = requestLog.get(ip) ?? [];
-  const recent = prior.filter((t) => now - t < WINDOW_MS);
-  if (recent.length >= MAX_PER_WINDOW) {
+  const prior = requestLog.get(key) ?? [];
+  const recent = prior.filter((t) => now - t < windowMs);
+  if (recent.length >= limit) {
     throw new Error("RATE_LIMITED");
   }
   recent.push(now);
-  requestLog.set(ip, recent);
+  requestLog.set(key, recent);
 }
 
 /** Test-only reset — do not call from application code. */
