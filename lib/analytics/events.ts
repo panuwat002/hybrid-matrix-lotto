@@ -4,7 +4,8 @@ type EventMap = {
   hero_enter: undefined;
   legal_back: undefined;
   legal_accept: undefined;
-  matrix_generated: { targetDate: string };
+  matrix_generated: { targetDate: string; modelId?: string };
+  backtest_viewed: undefined;
   number_copied: {
     kind: "prize1" | "adjacent" | "front3" | "back3" | "back2";
   };
