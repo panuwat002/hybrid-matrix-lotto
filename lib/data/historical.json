@@ -1,906 +1,4149 @@
 [
   {
     "date": "17012559",
-    "firstPrize": "304371"
+    "firstPrize": "304371",
+    "twoDigits": "50",
+    "threeFront": [
+      "031",
+      "532"
+    ],
+    "threeBack": [
+      "786",
+      "743"
+    ],
+    "nearFirst": [
+      "304370",
+      "304372"
+    ]
   },
   {
     "date": "01022559",
-    "firstPrize": "927800"
+    "firstPrize": "927800",
+    "twoDigits": "09",
+    "threeFront": [
+      "625",
+      "999"
+    ],
+    "threeBack": [
+      "054",
+      "076"
+    ],
+    "nearFirst": [
+      "927799",
+      "927801"
+    ]
   },
   {
     "date": "16022559",
-    "firstPrize": "356364"
+    "firstPrize": "356364",
+    "twoDigits": "98",
+    "threeFront": [
+      "699",
+      "312"
+    ],
+    "threeBack": [
+      "309",
+      "535"
+    ],
+    "nearFirst": [
+      "356363",
+      "356365"
+    ]
   },
   {
     "date": "01032559",
-    "firstPrize": "439686"
+    "firstPrize": "439686",
+    "twoDigits": "06",
+    "threeFront": [
+      "530",
+      "426"
+    ],
+    "threeBack": [
+      "155",
+      "743"
+    ],
+    "nearFirst": [
+      "439685",
+      "439687"
+    ]
   },
   {
     "date": "16032559",
-    "firstPrize": "134918"
+    "firstPrize": "134918",
+    "twoDigits": "32",
+    "threeFront": [
+      "877",
+      "855"
+    ],
+    "threeBack": [
+      "973",
+      "004"
+    ],
+    "nearFirst": [
+      "134917",
+      "134919"
+    ]
   },
   {
     "date": "01042559",
-    "firstPrize": "066720"
+    "firstPrize": "066720",
+    "twoDigits": "92",
+    "threeFront": [
+      "546",
+      "390"
+    ],
+    "threeBack": [
+      "285",
+      "852"
+    ],
+    "nearFirst": [
+      "066719",
+      "066721"
+    ]
   },
   {
     "date": "16042559",
-    "firstPrize": "221609"
+    "firstPrize": "221609",
+    "twoDigits": "87",
+    "threeFront": [
+      "228",
+      "008"
+    ],
+    "threeBack": [
+      "507",
+      "523"
+    ],
+    "nearFirst": [
+      "221608",
+      "221610"
+    ]
   },
   {
     "date": "02052559",
-    "firstPrize": "399459"
+    "firstPrize": "399459",
+    "twoDigits": "02",
+    "threeFront": [
+      "238",
+      "403"
+    ],
+    "threeBack": [
+      "671",
+      "046"
+    ],
+    "nearFirst": [
+      "399458",
+      "399460"
+    ]
   },
   {
     "date": "16052559",
-    "firstPrize": "141737"
+    "firstPrize": "141737",
+    "twoDigits": "98",
+    "threeFront": [
+      "975",
+      "382"
+    ],
+    "threeBack": [
+      "268",
+      "087"
+    ],
+    "nearFirst": [
+      "141736",
+      "141738"
+    ]
   },
   {
     "date": "01062559",
-    "firstPrize": "511825"
+    "firstPrize": "511825",
+    "twoDigits": "14",
+    "threeFront": [
+      "775",
+      "111"
+    ],
+    "threeBack": [
+      "937",
+      "880"
+    ],
+    "nearFirst": [
+      "511824",
+      "511826"
+    ]
   },
   {
     "date": "16062559",
-    "firstPrize": "073816"
+    "firstPrize": "073816",
+    "twoDigits": "79",
+    "threeFront": [
+      "804",
+      "251"
+    ],
+    "threeBack": [
+      "749",
+      "321"
+    ],
+    "nearFirst": [
+      "073815",
+      "073817"
+    ]
   },
   {
     "date": "01072559",
-    "firstPrize": "082460"
+    "firstPrize": "082460",
+    "twoDigits": "53",
+    "threeFront": [
+      "169",
+      "609"
+    ],
+    "threeBack": [
+      "302",
+      "173"
+    ],
+    "nearFirst": [
+      "082459",
+      "082461"
+    ]
   },
   {
     "date": "16072559",
-    "firstPrize": "449764"
+    "firstPrize": "449764",
+    "twoDigits": "55",
+    "threeFront": [
+      "734",
+      "552"
+    ],
+    "threeBack": [
+      "925",
+      "158"
+    ],
+    "nearFirst": [
+      "449763",
+      "449765"
+    ]
   },
   {
     "date": "01082559",
-    "firstPrize": "272932"
+    "firstPrize": "272932",
+    "twoDigits": "57",
+    "threeFront": [
+      "538",
+      "983"
+    ],
+    "threeBack": [
+      "871",
+      "472"
+    ],
+    "nearFirst": [
+      "272931",
+      "272933"
+    ]
   },
   {
     "date": "16082559",
-    "firstPrize": "254004"
+    "firstPrize": "254004",
+    "twoDigits": "33",
+    "threeFront": [
+      "966",
+      "366"
+    ],
+    "threeBack": [
+      "596",
+      "631"
+    ],
+    "nearFirst": [
+      "254003",
+      "254005"
+    ]
   },
   {
     "date": "01092559",
-    "firstPrize": "638684"
+    "firstPrize": "638684",
+    "twoDigits": "62",
+    "threeFront": [
+      "335",
+      "334"
+    ],
+    "threeBack": [
+      "669",
+      "630"
+    ],
+    "nearFirst": [
+      "638683",
+      "638685"
+    ]
   },
   {
     "date": "16092559",
-    "firstPrize": "240650"
+    "firstPrize": "240650",
+    "twoDigits": "42",
+    "threeFront": [
+      "583",
+      "493"
+    ],
+    "threeBack": [
+      "160",
+      "043"
+    ],
+    "nearFirst": [
+      "240649",
+      "240651"
+    ]
   },
   {
     "date": "01102559",
-    "firstPrize": "887102"
+    "firstPrize": "887102",
+    "twoDigits": "33",
+    "threeFront": [
+      "280",
+      "194"
+    ],
+    "threeBack": [
+      "458",
+      "017"
+    ],
+    "nearFirst": [
+      "887101",
+      "887103"
+    ]
   },
   {
     "date": "16102559",
-    "firstPrize": "571947"
+    "firstPrize": "571947",
+    "twoDigits": "98",
+    "threeFront": [
+      "692",
+      "885"
+    ],
+    "threeBack": [
+      "032",
+      "587"
+    ],
+    "nearFirst": [
+      "571946",
+      "571948"
+    ]
   },
   {
     "date": "01112559",
-    "firstPrize": "785438"
+    "firstPrize": "785438",
+    "twoDigits": "86",
+    "threeFront": [
+      "976",
+      "824"
+    ],
+    "threeBack": [
+      "752",
+      "038"
+    ],
+    "nearFirst": [
+      "785437",
+      "785439"
+    ]
   },
   {
     "date": "16112559",
-    "firstPrize": "858383"
+    "firstPrize": "858383",
+    "twoDigits": "44",
+    "threeFront": [
+      "682",
+      "040"
+    ],
+    "threeBack": [
+      "570",
+      "558"
+    ],
+    "nearFirst": [
+      "858382",
+      "858384"
+    ]
   },
   {
     "date": "01122559",
-    "firstPrize": "086069"
+    "firstPrize": "086069",
+    "twoDigits": "77",
+    "threeFront": [
+      "513",
+      "873"
+    ],
+    "threeBack": [
+      "148",
+      "450"
+    ],
+    "nearFirst": [
+      "086068",
+      "086070"
+    ]
   },
   {
     "date": "16122559",
-    "firstPrize": "435286"
+    "firstPrize": "435286",
+    "twoDigits": "35",
+    "threeFront": [
+      "596",
+      "366"
+    ],
+    "threeBack": [
+      "716",
+      "199"
+    ],
+    "nearFirst": [
+      "435285",
+      "435287"
+    ]
   },
   {
     "date": "17012560",
-    "firstPrize": "145157"
+    "firstPrize": "145157",
+    "twoDigits": "25",
+    "threeFront": [
+      "511",
+      "663"
+    ],
+    "threeBack": [
+      "516",
+      "836"
+    ],
+    "nearFirst": [
+      "145156",
+      "145158"
+    ]
   },
   {
     "date": "01022560",
-    "firstPrize": "054672"
+    "firstPrize": "054672",
+    "twoDigits": "42",
+    "threeFront": [
+      "066",
+      "807"
+    ],
+    "threeBack": [
+      "426",
+      "628"
+    ],
+    "nearFirst": [
+      "054671",
+      "054673"
+    ]
   },
   {
     "date": "16022560",
-    "firstPrize": "229116"
+    "firstPrize": "229116",
+    "twoDigits": "14",
+    "threeFront": [
+      "464",
+      "128"
+    ],
+    "threeBack": [
+      "953",
+      "375"
+    ],
+    "nearFirst": [
+      "229115",
+      "229117"
+    ]
   },
   {
     "date": "01032560",
-    "firstPrize": "978453"
+    "firstPrize": "978453",
+    "twoDigits": "78",
+    "threeFront": [
+      "560",
+      "450"
+    ],
+    "threeBack": [
+      "577",
+      "052"
+    ],
+    "nearFirst": [
+      "978452",
+      "978454"
+    ]
   },
   {
     "date": "16032560",
-    "firstPrize": "273863"
+    "firstPrize": "273863",
+    "twoDigits": "92",
+    "threeFront": [
+      "918",
+      "324"
+    ],
+    "threeBack": [
+      "941",
+      "694"
+    ],
+    "nearFirst": [
+      "273862",
+      "273864"
+    ]
   },
   {
     "date": "01042560",
-    "firstPrize": "392785"
+    "firstPrize": "392785",
+    "twoDigits": "80",
+    "threeFront": [
+      "057",
+      "020"
+    ],
+    "threeBack": [
+      "500",
+      "709"
+    ],
+    "nearFirst": [
+      "392784",
+      "392786"
+    ]
   },
   {
     "date": "16042560",
-    "firstPrize": "816729"
+    "firstPrize": "816729",
+    "twoDigits": "40",
+    "threeFront": [
+      "766",
+      "973"
+    ],
+    "threeBack": [
+      "241",
+      "807"
+    ],
+    "nearFirst": [
+      "816728",
+      "816730"
+    ]
   },
   {
     "date": "02052560",
-    "firstPrize": "008656"
+    "firstPrize": "008656",
+    "twoDigits": "35",
+    "threeFront": [
+      "949",
+      "573"
+    ],
+    "threeBack": [
+      "773",
+      "923"
+    ],
+    "nearFirst": [
+      "008655",
+      "008657"
+    ]
   },
   {
     "date": "16052560",
-    "firstPrize": "454891"
+    "firstPrize": "454891",
+    "twoDigits": "53",
+    "threeFront": [
+      "396",
+      "008"
+    ],
+    "threeBack": [
+      "603",
+      "490"
+    ],
+    "nearFirst": [
+      "454890",
+      "454892"
+    ]
   },
   {
     "date": "01062560",
-    "firstPrize": "053630"
+    "firstPrize": "053630",
+    "twoDigits": "61",
+    "threeFront": [
+      "121",
+      "218"
+    ],
+    "threeBack": [
+      "581",
+      "881"
+    ],
+    "nearFirst": [
+      "053629",
+      "053631"
+    ]
   },
   {
     "date": "16062560",
-    "firstPrize": "943142"
+    "firstPrize": "943142",
+    "twoDigits": "47",
+    "threeFront": [
+      "626",
+      "878"
+    ],
+    "threeBack": [
+      "740",
+      "373"
+    ],
+    "nearFirst": [
+      "943141",
+      "943143"
+    ]
   },
   {
     "date": "01072560",
-    "firstPrize": "112360"
+    "firstPrize": "112360",
+    "twoDigits": "26",
+    "threeFront": [
+      "226",
+      "489"
+    ],
+    "threeBack": [
+      "688",
+      "005"
+    ],
+    "nearFirst": [
+      "112359",
+      "112361"
+    ]
   },
   {
     "date": "16072560",
-    "firstPrize": "820327"
+    "firstPrize": "820327",
+    "twoDigits": "87",
+    "threeFront": [
+      "835",
+      "584"
+    ],
+    "threeBack": [
+      "390",
+      "823"
+    ],
+    "nearFirst": [
+      "820326",
+      "820328"
+    ]
   },
   {
     "date": "01082560",
-    "firstPrize": "756519"
+    "firstPrize": "756519",
+    "twoDigits": "36",
+    "threeFront": [
+      "061",
+      "386"
+    ],
+    "threeBack": [
+      "787",
+      "989"
+    ],
+    "nearFirst": [
+      "756518",
+      "756520"
+    ]
   },
   {
     "date": "16082560",
-    "firstPrize": "715431"
+    "firstPrize": "715431",
+    "twoDigits": "37",
+    "threeFront": [
+      "115",
+      "302"
+    ],
+    "threeBack": [
+      "253",
+      "945"
+    ],
+    "nearFirst": [
+      "715430",
+      "715432"
+    ]
   },
   {
     "date": "01092560",
-    "firstPrize": "143224"
+    "firstPrize": "143224",
+    "twoDigits": "65",
+    "threeFront": [
+      "345",
+      "679"
+    ],
+    "threeBack": [
+      "278",
+      "195"
+    ],
+    "nearFirst": [
+      "143223",
+      "143225"
+    ]
   },
   {
     "date": "16092560",
-    "firstPrize": "170143"
+    "firstPrize": "170143",
+    "twoDigits": "71",
+    "threeFront": [
+      "172",
+      "647"
+    ],
+    "threeBack": [
+      "340",
+      "388"
+    ],
+    "nearFirst": [
+      "170142",
+      "170144"
+    ]
   },
   {
     "date": "01102560",
-    "firstPrize": "880714"
+    "firstPrize": "880714",
+    "twoDigits": "52",
+    "threeFront": [
+      "611",
+      "726"
+    ],
+    "threeBack": [
+      "462",
+      "952"
+    ],
+    "nearFirst": [
+      "880713",
+      "880715"
+    ]
   },
   {
     "date": "16102560",
-    "firstPrize": "413494"
+    "firstPrize": "413494",
+    "twoDigits": "86",
+    "threeFront": [
+      "180",
+      "971"
+    ],
+    "threeBack": [
+      "287",
+      "128"
+    ],
+    "nearFirst": [
+      "413493",
+      "413495"
+    ]
   },
   {
     "date": "01112560",
-    "firstPrize": "533726"
+    "firstPrize": "533726",
+    "twoDigits": "85",
+    "threeFront": [
+      "165",
+      "425"
+    ],
+    "threeBack": [
+      "485",
+      "036"
+    ],
+    "nearFirst": [
+      "533725",
+      "533727"
+    ]
   },
   {
     "date": "16112560",
-    "firstPrize": "292391"
+    "firstPrize": "292391",
+    "twoDigits": "98",
+    "threeFront": [
+      "961",
+      "831"
+    ],
+    "threeBack": [
+      "477",
+      "628"
+    ],
+    "nearFirst": [
+      "292390",
+      "292392"
+    ]
   },
   {
     "date": "01122560",
-    "firstPrize": "451005"
+    "firstPrize": "451005",
+    "twoDigits": "33",
+    "threeFront": [
+      "626",
+      "303"
+    ],
+    "threeBack": [
+      "601",
+      "257"
+    ],
+    "nearFirst": [
+      "451004",
+      "451006"
+    ]
   },
   {
     "date": "16122560",
-    "firstPrize": "955596"
+    "firstPrize": "955596",
+    "twoDigits": "89",
+    "threeFront": [
+      "616",
+      "836"
+    ],
+    "threeBack": [
+      "290",
+      "938"
+    ],
+    "nearFirst": [
+      "955595",
+      "955597"
+    ]
   },
   {
     "date": "17012561",
-    "firstPrize": "203823"
+    "firstPrize": "203823",
+    "twoDigits": "50",
+    "threeFront": [
+      "624",
+      "799"
+    ],
+    "threeBack": [
+      "236",
+      "397"
+    ],
+    "nearFirst": [
+      "203822",
+      "203824"
+    ]
   },
   {
     "date": "01022561",
-    "firstPrize": "026853"
+    "firstPrize": "026853",
+    "twoDigits": "31",
+    "threeFront": [
+      "106",
+      "947"
+    ],
+    "threeBack": [
+      "181",
+      "519"
+    ],
+    "nearFirst": [
+      "026852",
+      "026854"
+    ]
   },
   {
     "date": "16022561",
-    "firstPrize": "309915"
+    "firstPrize": "309915",
+    "twoDigits": "39",
+    "threeFront": [
+      "007",
+      "388"
+    ],
+    "threeBack": [
+      "230",
+      "748"
+    ],
+    "nearFirst": [
+      "309914",
+      "309916"
+    ]
   },
   {
     "date": "02032561",
-    "firstPrize": "759415"
+    "firstPrize": "759415",
+    "twoDigits": "29",
+    "threeFront": [
+      "318",
+      "870"
+    ],
+    "threeBack": [
+      "723",
+      "589"
+    ],
+    "nearFirst": [
+      "759414",
+      "759416"
+    ]
   },
   {
     "date": "16032561",
-    "firstPrize": "218559"
+    "firstPrize": "218559",
+    "twoDigits": "82",
+    "threeFront": [
+      "720",
+      "064"
+    ],
+    "threeBack": [
+      "205",
+      "489"
+    ],
+    "nearFirst": [
+      "218558",
+      "218560"
+    ]
   },
   {
     "date": "01042561",
-    "firstPrize": "412073"
+    "firstPrize": "412073",
+    "twoDigits": "85",
+    "threeFront": [
+      "131",
+      "787"
+    ],
+    "threeBack": [
+      "638",
+      "924"
+    ],
+    "nearFirst": [
+      "412072",
+      "412074"
+    ]
   },
   {
     "date": "16042561",
-    "firstPrize": "739229"
+    "firstPrize": "739229",
+    "twoDigits": "60",
+    "threeFront": [
+      "273",
+      "654"
+    ],
+    "threeBack": [
+      "076",
+      "526"
+    ],
+    "nearFirst": [
+      "739228",
+      "739230"
+    ]
   },
   {
     "date": "02052561",
-    "firstPrize": "248038"
+    "firstPrize": "248038",
+    "twoDigits": "85",
+    "threeFront": [
+      "980",
+      "527"
+    ],
+    "threeBack": [
+      "225",
+      "602"
+    ],
+    "nearFirst": [
+      "248037",
+      "248039"
+    ]
   },
   {
     "date": "16052561",
-    "firstPrize": "075629"
+    "firstPrize": "075629",
+    "twoDigits": "20",
+    "threeFront": [
+      "357",
+      "130"
+    ],
+    "threeBack": [
+      "506",
+      "047"
+    ],
+    "nearFirst": [
+      "075628",
+      "075630"
+    ]
   },
   {
     "date": "01062561",
-    "firstPrize": "988117"
+    "firstPrize": "988117",
+    "twoDigits": "95",
+    "threeFront": [
+      "553",
+      "310"
+    ],
+    "threeBack": [
+      "248",
+      "650"
+    ],
+    "nearFirst": [
+      "988116",
+      "988118"
+    ]
   },
   {
     "date": "16062561",
-    "firstPrize": "223131"
+    "firstPrize": "223131",
+    "twoDigits": "46",
+    "threeFront": [
+      "432",
+      "507"
+    ],
+    "threeBack": [
+      "132",
+      "868"
+    ],
+    "nearFirst": [
+      "223130",
+      "223132"
+    ]
   },
   {
     "date": "01072561",
-    "firstPrize": "963623"
+    "firstPrize": "963623",
+    "twoDigits": "83",
+    "threeFront": [
+      "901",
+      "429"
+    ],
+    "threeBack": [
+      "210",
+      "217"
+    ],
+    "nearFirst": [
+      "963622",
+      "963624"
+    ]
   },
   {
     "date": "16072561",
-    "firstPrize": "596324"
+    "firstPrize": "596324",
+    "twoDigits": "27",
+    "threeFront": [
+      "403",
+      "530"
+    ],
+    "threeBack": [
+      "138",
+      "362"
+    ],
+    "nearFirst": [
+      "596323",
+      "596325"
+    ]
   },
   {
     "date": "01082561",
-    "firstPrize": "386602"
+    "firstPrize": "386602",
+    "twoDigits": "78",
+    "threeFront": [
+      "832",
+      "903"
+    ],
+    "threeBack": [
+      "549",
+      "726"
+    ],
+    "nearFirst": [
+      "386601",
+      "386603"
+    ]
   },
   {
     "date": "16082561",
-    "firstPrize": "586117"
+    "firstPrize": "586117",
+    "twoDigits": "10",
+    "threeFront": [
+      "670",
+      "340"
+    ],
+    "threeBack": [
+      "815",
+      "591"
+    ],
+    "nearFirst": [
+      "586116",
+      "586118"
+    ]
   },
   {
     "date": "01092561",
-    "firstPrize": "734510"
+    "firstPrize": "734510",
+    "twoDigits": "26",
+    "threeFront": [
+      "512",
+      "464"
+    ],
+    "threeBack": [
+      "202",
+      "097"
+    ],
+    "nearFirst": [
+      "734509",
+      "734511"
+    ]
   },
   {
     "date": "16092561",
-    "firstPrize": "149760"
+    "firstPrize": "149760",
+    "twoDigits": "79",
+    "threeFront": [
+      "323",
+      "539"
+    ],
+    "threeBack": [
+      "155",
+      "297"
+    ],
+    "nearFirst": [
+      "149759",
+      "149761"
+    ]
   },
   {
     "date": "01102561",
-    "firstPrize": "452643"
+    "firstPrize": "452643",
+    "twoDigits": "99",
+    "threeFront": [
+      "726",
+      "594"
+    ],
+    "threeBack": [
+      "810",
+      "561"
+    ],
+    "nearFirst": [
+      "452642",
+      "452644"
+    ]
   },
   {
     "date": "16102561",
-    "firstPrize": "200515"
+    "firstPrize": "200515",
+    "twoDigits": "93",
+    "threeFront": [
+      "392",
+      "186"
+    ],
+    "threeBack": [
+      "212",
+      "192"
+    ],
+    "nearFirst": [
+      "200514",
+      "200516"
+    ]
   },
   {
     "date": "01112561",
-    "firstPrize": "149840"
+    "firstPrize": "149840",
+    "twoDigits": "58",
+    "threeFront": [
+      "384",
+      "576"
+    ],
+    "threeBack": [
+      "046",
+      "509"
+    ],
+    "nearFirst": [
+      "149839",
+      "149841"
+    ]
   },
   {
     "date": "16112561",
-    "firstPrize": "989903"
+    "firstPrize": "989903",
+    "twoDigits": "16",
+    "threeFront": [
+      "471",
+      "930"
+    ],
+    "threeBack": [
+      "140",
+      "876"
+    ],
+    "nearFirst": [
+      "989902",
+      "989904"
+    ]
   },
   {
     "date": "01122561",
-    "firstPrize": "021840"
+    "firstPrize": "021840",
+    "twoDigits": "67",
+    "threeFront": [
+      "045",
+      "307"
+    ],
+    "threeBack": [
+      "561",
+      "988"
+    ],
+    "nearFirst": [
+      "021839",
+      "021841"
+    ]
   },
   {
     "date": "16122561",
-    "firstPrize": "356564"
+    "firstPrize": "356564",
+    "twoDigits": "62",
+    "threeFront": [
+      "480",
+      "948"
+    ],
+    "threeBack": [
+      "297",
+      "369"
+    ],
+    "nearFirst": [
+      "356563",
+      "356565"
+    ]
   },
   {
     "date": "17012562",
-    "firstPrize": "197079"
+    "firstPrize": "197079",
+    "twoDigits": "65",
+    "threeFront": [
+      "206",
+      "412"
+    ],
+    "threeBack": [
+      "127",
+      "660"
+    ],
+    "nearFirst": [
+      "197078",
+      "197080"
+    ]
   },
   {
     "date": "01022562",
-    "firstPrize": "967134"
+    "firstPrize": "967134",
+    "twoDigits": "04",
+    "threeFront": [
+      "643",
+      "779"
+    ],
+    "threeBack": [
+      "197",
+      "948"
+    ],
+    "nearFirst": [
+      "967133",
+      "967135"
+    ]
   },
   {
     "date": "16022562",
-    "firstPrize": "074824"
+    "firstPrize": "074824",
+    "twoDigits": "56",
+    "threeFront": [
+      "881",
+      "910"
+    ],
+    "threeBack": [
+      "612",
+      "879"
+    ],
+    "nearFirst": [
+      "074823",
+      "074825"
+    ]
   },
   {
     "date": "01032562",
-    "firstPrize": "345650"
+    "firstPrize": "345650",
+    "twoDigits": "65",
+    "threeFront": [
+      "137",
+      "999"
+    ],
+    "threeBack": [
+      "830",
+      "837"
+    ],
+    "nearFirst": [
+      "345649",
+      "345651"
+    ]
   },
   {
     "date": "16032562",
-    "firstPrize": "724628"
+    "firstPrize": "724628",
+    "twoDigits": "64",
+    "threeFront": [
+      "148",
+      "883"
+    ],
+    "threeBack": [
+      "154",
+      "877"
+    ],
+    "nearFirst": [
+      "724627",
+      "724629"
+    ]
   },
   {
     "date": "01042562",
-    "firstPrize": "109767"
+    "firstPrize": "109767",
+    "twoDigits": "52",
+    "threeFront": [
+      "888",
+      "959"
+    ],
+    "threeBack": [
+      "403",
+      "975"
+    ],
+    "nearFirst": [
+      "109766",
+      "109768"
+    ]
   },
   {
     "date": "16042562",
-    "firstPrize": "570331"
+    "firstPrize": "570331",
+    "twoDigits": "23",
+    "threeFront": [
+      "512",
+      "930"
+    ],
+    "threeBack": [
+      "966",
+      "968"
+    ],
+    "nearFirst": [
+      "570330",
+      "570332"
+    ]
   },
   {
     "date": "02052562",
-    "firstPrize": "061324"
+    "firstPrize": "061324",
+    "twoDigits": "25",
+    "threeFront": [
+      "043",
+      "476"
+    ],
+    "threeBack": [
+      "374",
+      "699"
+    ],
+    "nearFirst": [
+      "061323",
+      "061325"
+    ]
   },
   {
     "date": "16052562",
-    "firstPrize": "962526"
+    "firstPrize": "962526",
+    "twoDigits": "71",
+    "threeFront": [
+      "669",
+      "949"
+    ],
+    "threeBack": [
+      "018",
+      "828"
+    ],
+    "nearFirst": [
+      "962525",
+      "962527"
+    ]
   },
   {
     "date": "01062562",
-    "firstPrize": "516461"
+    "firstPrize": "516461",
+    "twoDigits": "46",
+    "threeFront": [
+      "589",
+      "713"
+    ],
+    "threeBack": [
+      "215",
+      "560"
+    ],
+    "nearFirst": [
+      "516460",
+      "516462"
+    ]
   },
   {
     "date": "16062562",
-    "firstPrize": "174055"
+    "firstPrize": "174055",
+    "twoDigits": "29",
+    "threeFront": [
+      "625",
+      "884"
+    ],
+    "threeBack": [
+      "127",
+      "800"
+    ],
+    "nearFirst": [
+      "174054",
+      "174056"
+    ]
   },
   {
     "date": "01072562",
-    "firstPrize": "943647"
+    "firstPrize": "943647",
+    "twoDigits": "86",
+    "threeFront": [
+      "239",
+      "864"
+    ],
+    "threeBack": [
+      "006",
+      "375"
+    ],
+    "nearFirst": [
+      "943646",
+      "943648"
+    ]
+  },
+  {
+    "date": "15072562",
+    "firstPrize": "369765",
+    "twoDigits": "88",
+    "threeFront": [
+      "901",
+      "355"
+    ],
+    "threeBack": [
+      "556",
+      "113"
+    ],
+    "nearFirst": [
+      "369764",
+      "369766"
+    ]
   },
   {
     "date": "01082562",
-    "firstPrize": "387006"
+    "firstPrize": "387006",
+    "twoDigits": "58",
+    "threeFront": [
+      "135",
+      "983"
+    ],
+    "threeBack": [
+      "562",
+      "795"
+    ],
+    "nearFirst": [
+      "387005",
+      "387007"
+    ]
   },
   {
     "date": "16082562",
-    "firstPrize": "775476"
+    "firstPrize": "775476",
+    "twoDigits": "89",
+    "threeFront": [
+      "149",
+      "912"
+    ],
+    "threeBack": [
+      "563",
+      "580"
+    ],
+    "nearFirst": [
+      "775475",
+      "775477"
+    ]
   },
   {
     "date": "01092562",
-    "firstPrize": "798787"
+    "firstPrize": "798787",
+    "twoDigits": "20",
+    "threeFront": [
+      "210",
+      "847"
+    ],
+    "threeBack": [
+      "274",
+      "439"
+    ],
+    "nearFirst": [
+      "798786",
+      "798788"
+    ]
   },
   {
     "date": "16092562",
-    "firstPrize": "340388"
+    "firstPrize": "340388",
+    "twoDigits": "85",
+    "threeFront": [
+      "947",
+      "733"
+    ],
+    "threeBack": [
+      "925",
+      "939"
+    ],
+    "nearFirst": [
+      "340387",
+      "340389"
+    ]
   },
   {
     "date": "01102562",
-    "firstPrize": "691197"
+    "firstPrize": "691197",
+    "twoDigits": "59",
+    "threeFront": [
+      "392",
+      "920"
+    ],
+    "threeBack": [
+      "606",
+      "797"
+    ],
+    "nearFirst": [
+      "691196",
+      "691198"
+    ]
   },
   {
     "date": "16102562",
-    "firstPrize": "812564"
+    "firstPrize": "812564",
+    "twoDigits": "15",
+    "threeFront": [
+      "255",
+      "625"
+    ],
+    "threeBack": [
+      "598",
+      "132"
+    ],
+    "nearFirst": [
+      "812563",
+      "812565"
+    ]
   },
   {
     "date": "01112562",
-    "firstPrize": "967375"
+    "firstPrize": "967375",
+    "twoDigits": "79",
+    "threeFront": [
+      "323",
+      "806"
+    ],
+    "threeBack": [
+      "021",
+      "206"
+    ],
+    "nearFirst": [
+      "967374",
+      "967376"
+    ]
   },
   {
     "date": "16112562",
-    "firstPrize": "017223"
+    "firstPrize": "017223",
+    "twoDigits": "32",
+    "threeFront": [
+      "164",
+      "640"
+    ],
+    "threeBack": [
+      "085",
+      "194"
+    ],
+    "nearFirst": [
+      "017222",
+      "017224"
+    ]
   },
   {
     "date": "01122562",
-    "firstPrize": "453522"
+    "firstPrize": "453522",
+    "twoDigits": "81",
+    "threeFront": [
+      "617",
+      "261"
+    ],
+    "threeBack": [
+      "457",
+      "013"
+    ],
+    "nearFirst": [
+      "453521",
+      "453523"
+    ]
   },
   {
     "date": "16122562",
-    "firstPrize": "529924"
+    "firstPrize": "529924",
+    "twoDigits": "97",
+    "threeFront": [
+      "043",
+      "138"
+    ],
+    "threeBack": [
+      "555",
+      "665"
+    ],
+    "nearFirst": [
+      "529923",
+      "529925"
+    ]
   },
   {
     "date": "17012563",
-    "firstPrize": "491774"
+    "firstPrize": "491774",
+    "twoDigits": "68",
+    "threeFront": [
+      "004",
+      "132"
+    ],
+    "threeBack": [
+      "379",
+      "595"
+    ],
+    "nearFirst": [
+      "491773",
+      "491775"
+    ]
   },
   {
     "date": "01022563",
-    "firstPrize": "589227"
+    "firstPrize": "589227",
+    "twoDigits": "06",
+    "threeFront": [
+      "259",
+      "552"
+    ],
+    "threeBack": [
+      "927",
+      "375"
+    ],
+    "nearFirst": [
+      "589226",
+      "589228"
+    ]
   },
   {
     "date": "16022563",
-    "firstPrize": "781403"
+    "firstPrize": "781403",
+    "twoDigits": "94",
+    "threeFront": [
+      "952",
+      "515"
+    ],
+    "threeBack": [
+      "030",
+      "918"
+    ],
+    "nearFirst": [
+      "781402",
+      "781404"
+    ]
   },
   {
     "date": "01032563",
-    "firstPrize": "875938"
+    "firstPrize": "875938",
+    "twoDigits": "98",
+    "threeFront": [
+      "294",
+      "328"
+    ],
+    "threeBack": [
+      "597",
+      "780"
+    ],
+    "nearFirst": [
+      "875937",
+      "875939"
+    ]
   },
   {
     "date": "16032563",
-    "firstPrize": "503446"
+    "firstPrize": "503446",
+    "twoDigits": "77",
+    "threeFront": [
+      "258",
+      "726"
+    ],
+    "threeBack": [
+      "404",
+      "661"
+    ],
+    "nearFirst": [
+      "503445",
+      "503447"
+    ]
   },
   {
     "date": "16052563",
-    "firstPrize": "051095"
+    "firstPrize": "051095",
+    "twoDigits": "22",
+    "threeFront": [
+      "285",
+      "430"
+    ],
+    "threeBack": [
+      "191",
+      "364"
+    ],
+    "nearFirst": [
+      "051094",
+      "051096"
+    ]
   },
   {
     "date": "01062563",
-    "firstPrize": "831567"
+    "firstPrize": "831567",
+    "twoDigits": "24",
+    "threeFront": [
+      "264",
+      "489"
+    ],
+    "threeBack": [
+      "562",
+      "582"
+    ],
+    "nearFirst": [
+      "831566",
+      "831568"
+    ]
   },
   {
     "date": "16062563",
-    "firstPrize": "516967"
+    "firstPrize": "516967",
+    "twoDigits": "64",
+    "threeFront": [
+      "876",
+      "882"
+    ],
+    "threeBack": [
+      "565",
+      "625"
+    ],
+    "nearFirst": [
+      "516966",
+      "516968"
+    ]
   },
   {
     "date": "01072563",
-    "firstPrize": "347258"
+    "firstPrize": "347258",
+    "twoDigits": "83",
+    "threeFront": [
+      "095",
+      "362"
+    ],
+    "threeBack": [
+      "094",
+      "307"
+    ],
+    "nearFirst": [
+      "347257",
+      "347259"
+    ]
   },
   {
     "date": "16072563",
-    "firstPrize": "873286"
+    "firstPrize": "873286",
+    "twoDigits": "53",
+    "threeFront": [
+      "510",
+      "533"
+    ],
+    "threeBack": [
+      "682",
+      "494"
+    ],
+    "nearFirst": [
+      "873285",
+      "873287"
+    ]
   },
   {
     "date": "01082563",
-    "firstPrize": "569391"
+    "firstPrize": "569391",
+    "twoDigits": "92",
+    "threeFront": [
+      "575",
+      "931"
+    ],
+    "threeBack": [
+      "578",
+      "809"
+    ],
+    "nearFirst": [
+      "569390",
+      "569392"
+    ]
   },
   {
     "date": "16082563",
-    "firstPrize": "945811"
+    "firstPrize": "945811",
+    "twoDigits": "88",
+    "threeFront": [
+      "712",
+      "614"
+    ],
+    "threeBack": [
+      "364",
+      "733"
+    ],
+    "nearFirst": [
+      "945810",
+      "945812"
+    ]
   },
   {
     "date": "01092563",
-    "firstPrize": "999997"
+    "firstPrize": "999997",
+    "twoDigits": "98",
+    "threeFront": [
+      "636",
+      "725"
+    ],
+    "threeBack": [
+      "342",
+      "957"
+    ],
+    "nearFirst": [
+      "999996",
+      "999998"
+    ]
   },
   {
     "date": "16092563",
-    "firstPrize": "244083"
+    "firstPrize": "244083",
+    "twoDigits": "57",
+    "threeFront": [
+      "127",
+      "220"
+    ],
+    "threeBack": [
+      "623",
+      "853"
+    ],
+    "nearFirst": [
+      "244082",
+      "244084"
+    ]
   },
   {
     "date": "01102563",
-    "firstPrize": "837893"
+    "firstPrize": "837893",
+    "twoDigits": "59",
+    "threeFront": [
+      "594",
+      "757"
+    ],
+    "threeBack": [
+      "110",
+      "595"
+    ],
+    "nearFirst": [
+      "837892",
+      "837894"
+    ]
   },
   {
     "date": "16102563",
-    "firstPrize": "286051"
+    "firstPrize": "286051",
+    "twoDigits": "38",
+    "threeFront": [
+      "189",
+      "464"
+    ],
+    "threeBack": [
+      "980",
+      "045"
+    ],
+    "nearFirst": [
+      "286050",
+      "286052"
+    ]
   },
   {
     "date": "01112563",
-    "firstPrize": "506404"
+    "firstPrize": "506404",
+    "twoDigits": "40",
+    "threeFront": [
+      "154",
+      "598"
+    ],
+    "threeBack": [
+      "062",
+      "245"
+    ],
+    "nearFirst": [
+      "506403",
+      "506405"
+    ]
   },
   {
     "date": "16112563",
-    "firstPrize": "972661"
+    "firstPrize": "972661",
+    "twoDigits": "46",
+    "threeFront": [
+      "368",
+      "741"
+    ],
+    "threeBack": [
+      "208",
+      "255"
+    ],
+    "nearFirst": [
+      "972660",
+      "972662"
+    ]
   },
   {
     "date": "01122563",
-    "firstPrize": "100994"
+    "firstPrize": "100994",
+    "twoDigits": "84",
+    "threeFront": [
+      "093",
+      "776"
+    ],
+    "threeBack": [
+      "984",
+      "834"
+    ],
+    "nearFirst": [
+      "100993",
+      "100995"
+    ]
   },
   {
     "date": "16122563",
-    "firstPrize": "201303"
+    "firstPrize": "201303",
+    "twoDigits": "70",
+    "threeFront": [
+      "377",
+      "828"
+    ],
+    "threeBack": [
+      "072",
+      "517"
+    ],
+    "nearFirst": [
+      "201302",
+      "201304"
+    ]
   },
   {
     "date": "17012564",
-    "firstPrize": "384395"
+    "firstPrize": "384395",
+    "twoDigits": "15",
+    "threeFront": [
+      "367",
+      "653"
+    ],
+    "threeBack": [
+      "566",
+      "878"
+    ],
+    "nearFirst": [
+      "384394",
+      "384396"
+    ]
   },
   {
     "date": "01022564",
-    "firstPrize": "912307"
+    "firstPrize": "912307",
+    "twoDigits": "97",
+    "threeFront": [
+      "605",
+      "248"
+    ],
+    "threeBack": [
+      "282",
+      "651"
+    ],
+    "nearFirst": [
+      "912306",
+      "912308"
+    ]
   },
   {
     "date": "16022564",
-    "firstPrize": "424603"
+    "firstPrize": "424603",
+    "twoDigits": "39",
+    "threeFront": [
+      "861",
+      "318"
+    ],
+    "threeBack": [
+      "057",
+      "817"
+    ],
+    "nearFirst": [
+      "424602",
+      "424604"
+    ]
   },
   {
     "date": "01032564",
-    "firstPrize": "835538"
+    "firstPrize": "835538",
+    "twoDigits": "73",
+    "threeFront": [
+      "290",
+      "838"
+    ],
+    "threeBack": [
+      "051",
+      "806"
+    ],
+    "nearFirst": [
+      "835537",
+      "835539"
+    ]
   },
   {
     "date": "16032564",
-    "firstPrize": "890422"
+    "firstPrize": "890422",
+    "twoDigits": "19",
+    "threeFront": [
+      "036",
+      "902"
+    ],
+    "threeBack": [
+      "396",
+      "256"
+    ],
+    "nearFirst": [
+      "890421",
+      "890423"
+    ]
   },
   {
     "date": "01042564",
-    "firstPrize": "472270"
+    "firstPrize": "472270",
+    "twoDigits": "05",
+    "threeFront": [
+      "755",
+      "283"
+    ],
+    "threeBack": [
+      "393",
+      "577"
+    ],
+    "nearFirst": [
+      "472269",
+      "472271"
+    ]
   },
   {
     "date": "16042564",
-    "firstPrize": "100787"
+    "firstPrize": "100787",
+    "twoDigits": "56",
+    "threeFront": [
+      "013",
+      "143"
+    ],
+    "threeBack": [
+      "264",
+      "478"
+    ],
+    "nearFirst": [
+      "100786",
+      "100788"
+    ]
   },
   {
     "date": "02052564",
-    "firstPrize": "501272"
+    "firstPrize": "501272",
+    "twoDigits": "18",
+    "threeFront": [
+      "306",
+      "018"
+    ],
+    "threeBack": [
+      "498",
+      "129"
+    ],
+    "nearFirst": [
+      "501271",
+      "501273"
+    ]
   },
   {
     "date": "16052564",
-    "firstPrize": "684579"
+    "firstPrize": "684579",
+    "twoDigits": "14",
+    "threeFront": [
+      "615",
+      "843"
+    ],
+    "threeBack": [
+      "276",
+      "970"
+    ],
+    "nearFirst": [
+      "684578",
+      "684580"
+    ]
   },
   {
     "date": "01062564",
-    "firstPrize": "292972"
+    "firstPrize": "292972",
+    "twoDigits": "45",
+    "threeFront": [
+      "620",
+      "193"
+    ],
+    "threeBack": [
+      "978",
+      "723"
+    ],
+    "nearFirst": [
+      "292971",
+      "292973"
+    ]
   },
   {
     "date": "16062564",
-    "firstPrize": "691861"
+    "firstPrize": "691861",
+    "twoDigits": "17",
+    "threeFront": [
+      "054",
+      "007"
+    ],
+    "threeBack": [
+      "447",
+      "668"
+    ],
+    "nearFirst": [
+      "691860",
+      "691862"
+    ]
   },
   {
     "date": "01072564",
-    "firstPrize": "713517"
+    "firstPrize": "713517",
+    "twoDigits": "29",
+    "threeFront": [
+      "794",
+      "073"
+    ],
+    "threeBack": [
+      "511",
+      "414"
+    ],
+    "nearFirst": [
+      "713516",
+      "713518"
+    ]
   },
   {
     "date": "16072564",
-    "firstPrize": "556725"
+    "firstPrize": "556725",
+    "twoDigits": "70",
+    "threeFront": [
+      "058",
+      "174"
+    ],
+    "threeBack": [
+      "233",
+      "927"
+    ],
+    "nearFirst": [
+      "556724",
+      "556726"
+    ]
   },
   {
     "date": "01082564",
-    "firstPrize": "910261"
+    "firstPrize": "910261",
+    "twoDigits": "69",
+    "threeFront": [
+      "103",
+      "307"
+    ],
+    "threeBack": [
+      "004",
+      "785"
+    ],
+    "nearFirst": [
+      "910260",
+      "910262"
+    ]
   },
   {
     "date": "16082564",
-    "firstPrize": "046750"
+    "firstPrize": "046750",
+    "twoDigits": "23",
+    "threeFront": [
+      "421",
+      "666"
+    ],
+    "threeBack": [
+      "160",
+      "355"
+    ],
+    "nearFirst": [
+      "046751",
+      "046749"
+    ]
   },
   {
     "date": "01092564",
-    "firstPrize": "114475"
+    "firstPrize": "114475",
+    "twoDigits": "79",
+    "threeFront": [
+      "278",
+      "302"
+    ],
+    "threeBack": [
+      "123",
+      "458"
+    ],
+    "nearFirst": [
+      "114474",
+      "114476"
+    ]
   },
   {
     "date": "16092564",
-    "firstPrize": "070935"
+    "firstPrize": "070935",
+    "twoDigits": "90",
+    "threeFront": [
+      "609",
+      "817"
+    ],
+    "threeBack": [
+      "379",
+      "007"
+    ],
+    "nearFirst": [
+      "070934",
+      "070936"
+    ]
   },
   {
     "date": "01102564",
-    "firstPrize": "578171"
+    "firstPrize": "578171",
+    "twoDigits": "83",
+    "threeFront": [
+      "285",
+      "361"
+    ],
+    "threeBack": [
+      "379",
+      "449"
+    ],
+    "nearFirst": [
+      "578170",
+      "578172"
+    ]
   },
   {
     "date": "16102564",
-    "firstPrize": "386372"
+    "firstPrize": "386372",
+    "twoDigits": "38",
+    "threeFront": [
+      "602",
+      "964"
+    ],
+    "threeBack": [
+      "295",
+      "798"
+    ],
+    "nearFirst": [
+      "386371",
+      "386373"
+    ]
   },
   {
     "date": "01112564",
-    "firstPrize": "045037"
+    "firstPrize": "045037",
+    "twoDigits": "95",
+    "threeFront": [
+      "247",
+      "458"
+    ],
+    "threeBack": [
+      "331",
+      "755"
+    ],
+    "nearFirst": [
+      "045036",
+      "045038"
+    ]
   },
   {
     "date": "16112564",
-    "firstPrize": "032761"
+    "firstPrize": "032761",
+    "twoDigits": "57",
+    "threeFront": [
+      "648",
+      "471"
+    ],
+    "threeBack": [
+      "844",
+      "245"
+    ],
+    "nearFirst": [
+      "032760",
+      "032762"
+    ]
   },
   {
     "date": "01122564",
-    "firstPrize": "077258"
+    "firstPrize": "077258",
+    "twoDigits": "82",
+    "threeFront": [
+      "739",
+      "740"
+    ],
+    "threeBack": [
+      "401",
+      "485"
+    ],
+    "nearFirst": [
+      "077257",
+      "077259"
+    ]
   },
   {
     "date": "16122564",
-    "firstPrize": "639235"
+    "firstPrize": "639235",
+    "twoDigits": "83",
+    "threeFront": [
+      "097",
+      "629"
+    ],
+    "threeBack": [
+      "476",
+      "522"
+    ],
+    "nearFirst": [
+      "639234",
+      "639236"
+    ]
   },
   {
     "date": "17012565",
-    "firstPrize": "880159"
+    "firstPrize": "880159",
+    "twoDigits": "92",
+    "threeFront": [
+      "731",
+      "786"
+    ],
+    "threeBack": [
+      "529",
+      "119"
+    ],
+    "nearFirst": [
+      "880158",
+      "880160"
+    ]
   },
   {
     "date": "01022565",
-    "firstPrize": "944308"
+    "firstPrize": "944308",
+    "twoDigits": "30",
+    "threeFront": [
+      "942",
+      "061"
+    ],
+    "threeBack": [
+      "509",
+      "485"
+    ],
+    "nearFirst": [
+      "944307",
+      "944309"
+    ]
   },
   {
     "date": "17022565",
-    "firstPrize": "098597"
+    "firstPrize": "098597",
+    "twoDigits": "57",
+    "threeFront": [
+      "085",
+      "644"
+    ],
+    "threeBack": [
+      "592",
+      "816"
+    ],
+    "nearFirst": [
+      "098596",
+      "098598"
+    ]
   },
   {
     "date": "01032565",
-    "firstPrize": "061905"
+    "firstPrize": "061905",
+    "twoDigits": "07",
+    "threeFront": [
+      "236",
+      "834"
+    ],
+    "threeBack": [
+      "234",
+      "691"
+    ],
+    "nearFirst": [
+      "061904",
+      "061906"
+    ]
   },
   {
     "date": "16032565",
-    "firstPrize": "737867"
+    "firstPrize": "737867",
+    "twoDigits": "03",
+    "threeFront": [
+      "349",
+      "985"
+    ],
+    "threeBack": [
+      "989",
+      "788"
+    ],
+    "nearFirst": [
+      "737866",
+      "737868"
+    ]
   },
   {
     "date": "01042565",
-    "firstPrize": "970618"
+    "firstPrize": "970618",
+    "twoDigits": "10",
+    "threeFront": [
+      "738",
+      "391"
+    ],
+    "threeBack": [
+      "578",
+      "870"
+    ],
+    "nearFirst": [
+      "970617",
+      "970619"
+    ]
   },
   {
     "date": "16042565",
-    "firstPrize": "395919"
+    "firstPrize": "395919",
+    "twoDigits": "58",
+    "threeFront": [
+      "859",
+      "289"
+    ],
+    "threeBack": [
+      "413",
+      "508"
+    ],
+    "nearFirst": [
+      "395918",
+      "395920"
+    ]
   },
   {
     "date": "02052565",
-    "firstPrize": "658642"
+    "firstPrize": "658642",
+    "twoDigits": "09",
+    "threeFront": [
+      "778",
+      "518"
+    ],
+    "threeBack": [
+      "041",
+      "325"
+    ],
+    "nearFirst": [
+      "658641",
+      "658643"
+    ]
   },
   {
     "date": "16052565",
-    "firstPrize": "155012"
+    "firstPrize": "155012",
+    "twoDigits": "06",
+    "threeFront": [
+      "247",
+      "736"
+    ],
+    "threeBack": [
+      "540",
+      "236"
+    ],
+    "nearFirst": [
+      "155011",
+      "155013"
+    ]
   },
   {
     "date": "01062565",
-    "firstPrize": "319196"
+    "firstPrize": "319196",
+    "twoDigits": "02",
+    "threeFront": [
+      "817",
+      "679"
+    ],
+    "threeBack": [
+      "213",
+      "652"
+    ],
+    "nearFirst": [
+      "319195",
+      "319197"
+    ]
   },
   {
     "date": "16062565",
-    "firstPrize": "361807"
+    "firstPrize": "361807",
+    "twoDigits": "92",
+    "threeFront": [
+      "549",
+      "285"
+    ],
+    "threeBack": [
+      "228",
+      "106"
+    ],
+    "nearFirst": [
+      "361806",
+      "361808"
+    ]
   },
   {
     "date": "01072565",
-    "firstPrize": "981417"
+    "firstPrize": "981417",
+    "twoDigits": "61",
+    "threeFront": [
+      "287",
+      "242"
+    ],
+    "threeBack": [
+      "002",
+      "542"
+    ],
+    "nearFirst": [
+      "981416",
+      "981418"
+    ]
   },
   {
     "date": "16072565",
-    "firstPrize": "620405"
+    "firstPrize": "620405",
+    "twoDigits": "53",
+    "threeFront": [
+      "159",
+      "834"
+    ],
+    "threeBack": [
+      "061",
+      "279"
+    ],
+    "nearFirst": [
+      "620404",
+      "620406"
+    ]
   },
   {
     "date": "01082565",
-    "firstPrize": "436594"
+    "firstPrize": "436594",
+    "twoDigits": "14",
+    "threeFront": [
+      "893",
+      "266"
+    ],
+    "threeBack": [
+      "447",
+      "282"
+    ],
+    "nearFirst": [
+      "436593",
+      "436595"
+    ]
   },
   {
     "date": "16082565",
-    "firstPrize": "331583"
+    "firstPrize": "331583",
+    "twoDigits": "42",
+    "threeFront": [
+      "271",
+      "300"
+    ],
+    "threeBack": [
+      "284",
+      "876"
+    ],
+    "nearFirst": [
+      "331582",
+      "331584"
+    ]
   },
   {
     "date": "01092565",
-    "firstPrize": "929332"
+    "firstPrize": "929332",
+    "twoDigits": "83",
+    "threeFront": [
+      "298",
+      "725"
+    ],
+    "threeBack": [
+      "210",
+      "604"
+    ],
+    "nearFirst": [
+      "929331",
+      "929333"
+    ]
   },
   {
     "date": "16092565",
-    "firstPrize": "943703"
+    "firstPrize": "943703",
+    "twoDigits": "75",
+    "threeFront": [
+      "971",
+      "540"
+    ],
+    "threeBack": [
+      "631",
+      "432"
+    ],
+    "nearFirst": [
+      "943702",
+      "943704"
+    ]
   },
   {
     "date": "01102565",
-    "firstPrize": "484669"
+    "firstPrize": "484669",
+    "twoDigits": "50",
+    "threeFront": [
+      "206",
+      "996"
+    ],
+    "threeBack": [
+      "194",
+      "278"
+    ],
+    "nearFirst": [
+      "484668",
+      "484670"
+    ]
   },
   {
     "date": "16102565",
-    "firstPrize": "613106"
+    "firstPrize": "613106",
+    "twoDigits": "15",
+    "threeFront": [
+      "037",
+      "158"
+    ],
+    "threeBack": [
+      "606",
+      "799"
+    ],
+    "nearFirst": [
+      "613105",
+      "613107"
+    ]
   },
   {
     "date": "01112565",
-    "firstPrize": "913106"
+    "firstPrize": "913106",
+    "twoDigits": "70",
+    "threeFront": [
+      "722",
+      "839"
+    ],
+    "threeBack": [
+      "343",
+      "922"
+    ],
+    "nearFirst": [
+      "913105",
+      "913107"
+    ]
   },
   {
     "date": "16112565",
-    "firstPrize": "121789"
+    "firstPrize": "121789",
+    "twoDigits": "64",
+    "threeFront": [
+      "722",
+      "532"
+    ],
+    "threeBack": [
+      "157",
+      "973"
+    ],
+    "nearFirst": [
+      "121788",
+      "121790"
+    ]
   },
   {
     "date": "01122565",
-    "firstPrize": "375805"
+    "firstPrize": "375805",
+    "twoDigits": "08",
+    "threeFront": [
+      "170",
+      "786"
+    ],
+    "threeBack": [
+      "409",
+      "421"
+    ],
+    "nearFirst": [
+      "375804",
+      "375806"
+    ]
   },
   {
     "date": "16122565",
-    "firstPrize": "845093"
+    "firstPrize": "845093",
+    "twoDigits": "14",
+    "threeFront": [
+      "912",
+      "411"
+    ],
+    "threeBack": [
+      "855",
+      "593"
+    ],
+    "nearFirst": [
+      "845092",
+      "845094"
+    ]
   },
   {
     "date": "17012566",
-    "firstPrize": "812519"
+    "firstPrize": "812519",
+    "twoDigits": "47",
+    "threeFront": [
+      "443",
+      "389"
+    ],
+    "threeBack": [
+      "849",
+      "564"
+    ],
+    "nearFirst": [
+      "812518",
+      "812520"
+    ]
   },
   {
     "date": "01022566",
-    "firstPrize": "297411"
+    "firstPrize": "297411",
+    "twoDigits": "92",
+    "threeFront": [
+      "181",
+      "789"
+    ],
+    "threeBack": [
+      "101",
+      "664"
+    ],
+    "nearFirst": [
+      "297410",
+      "297412"
+    ]
   },
   {
     "date": "16022566",
-    "firstPrize": "590417"
+    "firstPrize": "590417",
+    "twoDigits": "80",
+    "threeFront": [
+      "195",
+      "664"
+    ],
+    "threeBack": [
+      "377",
+      "523"
+    ],
+    "nearFirst": [
+      "590416",
+      "590418"
+    ]
   },
   {
     "date": "01032566",
-    "firstPrize": "417652"
+    "firstPrize": "417652",
+    "twoDigits": "55",
+    "threeFront": [
+      "577",
+      "919"
+    ],
+    "threeBack": [
+      "748",
+      "984"
+    ],
+    "nearFirst": [
+      "417651",
+      "417653"
+    ]
   },
   {
     "date": "16032566",
-    "firstPrize": "025873"
+    "firstPrize": "025873",
+    "twoDigits": "73",
+    "threeFront": [
+      "420",
+      "800"
+    ],
+    "threeBack": [
+      "355",
+      "544"
+    ],
+    "nearFirst": [
+      "025872",
+      "025874"
+    ]
   },
   {
     "date": "01042566",
-    "firstPrize": "087907"
+    "firstPrize": "087907",
+    "twoDigits": "99",
+    "threeFront": [
+      "111",
+      "914"
+    ],
+    "threeBack": [
+      "290",
+      "698"
+    ],
+    "nearFirst": [
+      "087906",
+      "087908"
+    ]
   },
   {
     "date": "16042566",
-    "firstPrize": "984906"
+    "firstPrize": "984906",
+    "twoDigits": "71",
+    "threeFront": [
+      "670",
+      "678"
+    ],
+    "threeBack": [
+      "797",
+      "551"
+    ],
+    "nearFirst": [
+      "984905",
+      "984907"
+    ]
   },
   {
     "date": "02052566",
-    "firstPrize": "843019"
+    "firstPrize": "843019",
+    "twoDigits": "65",
+    "threeFront": [
+      "500",
+      "780"
+    ],
+    "threeBack": [
+      "269",
+      "187"
+    ],
+    "nearFirst": [
+      "843018",
+      "843020"
+    ]
   },
   {
     "date": "16052566",
-    "firstPrize": "132903"
+    "firstPrize": "132903",
+    "twoDigits": "99",
+    "threeFront": [
+      "739",
+      "678"
+    ],
+    "threeBack": [
+      "693",
+      "731"
+    ],
+    "nearFirst": [
+      "132902",
+      "132904"
+    ]
   },
   {
     "date": "01062566",
-    "firstPrize": "125272"
+    "firstPrize": "125272",
+    "twoDigits": "09",
+    "threeFront": [
+      "000",
+      "681"
+    ],
+    "threeBack": [
+      "386",
+      "971"
+    ],
+    "nearFirst": [
+      "125271",
+      "125273"
+    ]
   },
   {
     "date": "16062566",
-    "firstPrize": "264872"
+    "firstPrize": "264872",
+    "twoDigits": "30",
+    "threeFront": [
+      "519",
+      "628"
+    ],
+    "threeBack": [
+      "202",
+      "874"
+    ],
+    "nearFirst": [
+      "264871",
+      "264873"
+    ]
   },
   {
     "date": "01072566",
-    "firstPrize": "922605"
+    "firstPrize": "922605",
+    "twoDigits": "16",
+    "threeFront": [
+      "281",
+      "867"
+    ],
+    "threeBack": [
+      "491",
+      "947"
+    ],
+    "nearFirst": [
+      "922604",
+      "922606"
+    ]
   },
   {
     "date": "16072566",
-    "firstPrize": "169530"
+    "firstPrize": "169530",
+    "twoDigits": "62",
+    "threeFront": [
+      "261",
+      "384"
+    ],
+    "threeBack": [
+      "066",
+      "780"
+    ],
+    "nearFirst": [
+      "169529",
+      "169531"
+    ]
   },
   {
     "date": "16082566",
-    "firstPrize": "471782"
+    "firstPrize": "471782",
+    "twoDigits": "67",
+    "threeFront": [
+      "431",
+      "739"
+    ],
+    "threeBack": [
+      "737",
+      "742"
+    ],
+    "nearFirst": [
+      "471781",
+      "471783"
+    ]
   },
   {
     "date": "01092566",
-    "firstPrize": "915478"
+    "firstPrize": "915478",
+    "twoDigits": "91",
+    "threeFront": [
+      "521",
+      "596"
+    ],
+    "threeBack": [
+      "692",
+      "291"
+    ],
+    "nearFirst": [
+      "915477",
+      "915479"
+    ]
   },
   {
     "date": "16092566",
-    "firstPrize": "320812"
+    "firstPrize": "320812",
+    "twoDigits": "46",
+    "threeFront": [
+      "699",
+      "037"
+    ],
+    "threeBack": [
+      "344",
+      "057"
+    ],
+    "nearFirst": [
+      "320811",
+      "320813"
+    ]
   },
   {
     "date": "01102566",
-    "firstPrize": "727202"
+    "firstPrize": "727202",
+    "twoDigits": "66",
+    "threeFront": [
+      "355",
+      "324"
+    ],
+    "threeBack": [
+      "426",
+      "615"
+    ],
+    "nearFirst": [
+      "727201",
+      "727203"
+    ]
   },
   {
     "date": "16102566",
-    "firstPrize": "931446"
+    "firstPrize": "931446",
+    "twoDigits": "44",
+    "threeFront": [
+      "398",
+      "167"
+    ],
+    "threeBack": [
+      "970",
+      "272"
+    ],
+    "nearFirst": [
+      "931445",
+      "931447"
+    ]
   },
   {
     "date": "01112566",
-    "firstPrize": "743951"
+    "firstPrize": "743951",
+    "twoDigits": "63",
+    "threeFront": [
+      "335",
+      "913"
+    ],
+    "threeBack": [
+      "019",
+      "349"
+    ],
+    "nearFirst": [
+      "743950",
+      "743952"
+    ]
   },
   {
     "date": "16112566",
-    "firstPrize": "557990"
+    "firstPrize": "557990",
+    "twoDigits": "14",
+    "threeFront": [
+      "346",
+      "412"
+    ],
+    "threeBack": [
+      "778",
+      "961"
+    ],
+    "nearFirst": [
+      "557989",
+      "557991"
+    ]
   },
   {
     "date": "01122566",
-    "firstPrize": "251097"
+    "firstPrize": "251097",
+    "twoDigits": "91",
+    "threeFront": [
+      "055",
+      "265"
+    ],
+    "threeBack": [
+      "092",
+      "280"
+    ],
+    "nearFirst": [
+      "251096",
+      "251098"
+    ]
   },
   {
     "date": "16122566",
-    "firstPrize": "356757"
+    "firstPrize": "356757",
+    "twoDigits": "85",
+    "threeFront": [
+      "058",
+      "410"
+    ],
+    "threeBack": [
+      "584",
+      "964"
+    ],
+    "nearFirst": [
+      "356756",
+      "356758"
+    ]
   },
   {
     "date": "17012567",
-    "firstPrize": "105979"
+    "firstPrize": "105979",
+    "twoDigits": "61",
+    "threeFront": [
+      "429",
+      "931"
+    ],
+    "threeBack": [
+      "196",
+      "635"
+    ],
+    "nearFirst": [
+      "105978",
+      "105980"
+    ]
   },
   {
     "date": "01022567",
-    "firstPrize": "607063"
+    "firstPrize": "607063",
+    "twoDigits": "09",
+    "threeFront": [
+      "454",
+      "943"
+    ],
+    "threeBack": [
+      "544",
+      "591"
+    ],
+    "nearFirst": [
+      "607062",
+      "607064"
+    ]
   },
   {
     "date": "16022567",
-    "firstPrize": "941395"
+    "firstPrize": "941395",
+    "twoDigits": "43",
+    "threeFront": [
+      "056",
+      "330"
+    ],
+    "threeBack": [
+      "587",
+      "375"
+    ],
+    "nearFirst": [
+      "941394",
+      "941396"
+    ]
   },
   {
     "date": "01032567",
-    "firstPrize": "253603"
+    "firstPrize": "253603",
+    "twoDigits": "79",
+    "threeFront": [
+      "975",
+      "900"
+    ],
+    "threeBack": [
+      "382",
+      "703"
+    ],
+    "nearFirst": [
+      "253602",
+      "253604"
+    ]
   },
   {
     "date": "16032567",
-    "firstPrize": "997626"
+    "firstPrize": "997626",
+    "twoDigits": "78",
+    "threeFront": [
+      "571",
+      "509"
+    ],
+    "threeBack": [
+      "794",
+      "329"
+    ],
+    "nearFirst": [
+      "997625",
+      "997627"
+    ]
   },
   {
     "date": "01042567",
-    "firstPrize": "803481"
+    "firstPrize": "803481",
+    "twoDigits": "90",
+    "threeFront": [
+      "122",
+      "809"
+    ],
+    "threeBack": [
+      "559",
+      "947"
+    ],
+    "nearFirst": [
+      "803480",
+      "803482"
+    ]
   },
   {
     "date": "16042567",
-    "firstPrize": "943598"
+    "firstPrize": "943598",
+    "twoDigits": "79",
+    "threeFront": [
+      "729",
+      "727"
+    ],
+    "threeBack": [
+      "154",
+      "200"
+    ],
+    "nearFirst": [
+      "943597",
+      "943599"
+    ]
   },
   {
     "date": "02052567",
-    "firstPrize": "980116"
+    "firstPrize": "980116",
+    "twoDigits": "17",
+    "threeFront": [
+      "104",
+      "763"
+    ],
+    "threeBack": [
+      "634",
+      "833"
+    ],
+    "nearFirst": [
+      "980115",
+      "980117"
+    ]
   },
   {
     "date": "16052567",
-    "firstPrize": "205690"
+    "firstPrize": "205690",
+    "twoDigits": "60",
+    "threeFront": [
+      "885",
+      "747"
+    ],
+    "threeBack": [
+      "137",
+      "070"
+    ],
+    "nearFirst": [
+      "205689",
+      "205691"
+    ]
   },
   {
     "date": "01062567",
-    "firstPrize": "530593"
+    "firstPrize": "530593",
+    "twoDigits": "42",
+    "threeFront": [
+      "194",
+      "364"
+    ],
+    "threeBack": [
+      "421",
+      "734"
+    ],
+    "nearFirst": [
+      "530592",
+      "530594"
+    ]
   },
   {
     "date": "16062567",
-    "firstPrize": "518504"
+    "firstPrize": "518504",
+    "twoDigits": "31",
+    "threeFront": [
+      "016",
+      "428"
+    ],
+    "threeBack": [
+      "426",
+      "447"
+    ],
+    "nearFirst": [
+      "518503",
+      "518505"
+    ]
   },
   {
     "date": "01072567",
-    "firstPrize": "434503"
+    "firstPrize": "434503",
+    "twoDigits": "89",
+    "threeFront": [
+      "839",
+      "975"
+    ],
+    "threeBack": [
+      "647",
+      "778"
+    ],
+    "nearFirst": [
+      "434502",
+      "434504"
+    ]
   },
   {
     "date": "16072567",
-    "firstPrize": "367336"
+    "firstPrize": "367336",
+    "twoDigits": "21",
+    "threeFront": [
+      "331",
+      "011"
+    ],
+    "threeBack": [
+      "421",
+      "618"
+    ],
+    "nearFirst": [
+      "367335",
+      "367337"
+    ]
   },
   {
     "date": "01082567",
-    "firstPrize": "407041"
+    "firstPrize": "407041",
+    "twoDigits": "46",
+    "threeFront": [
+      "408",
+      "579"
+    ],
+    "threeBack": [
+      "622",
+      "070"
+    ],
+    "nearFirst": [
+      "407040",
+      "407042"
+    ]
   },
   {
     "date": "16082567",
-    "firstPrize": "095867"
+    "firstPrize": "095867",
+    "twoDigits": "28",
+    "threeFront": [
+      "212",
+      "334"
+    ],
+    "threeBack": [
+      "697",
+      "728"
+    ],
+    "nearFirst": [
+      "095866",
+      "095868"
+    ]
   },
   {
     "date": "01092567",
-    "firstPrize": "199606"
+    "firstPrize": "199606",
+    "twoDigits": "94",
+    "threeFront": [
+      "173",
+      "220"
+    ],
+    "threeBack": [
+      "094",
+      "388"
+    ],
+    "nearFirst": [
+      "199605",
+      "199607"
+    ]
   },
   {
     "date": "16092567",
-    "firstPrize": "608662"
+    "firstPrize": "608662",
+    "twoDigits": "37",
+    "threeFront": [
+      "230",
+      "904"
+    ],
+    "threeBack": [
+      "008",
+      "408"
+    ],
+    "nearFirst": [
+      "608661",
+      "608663"
+    ]
   },
   {
     "date": "01102567",
-    "firstPrize": "718665"
+    "firstPrize": "718665",
+    "twoDigits": "59",
+    "threeFront": [
+      "053",
+      "812"
+    ],
+    "threeBack": [
+      "079",
+      "566"
+    ],
+    "nearFirst": [
+      "718664",
+      "718666"
+    ]
   },
   {
     "date": "16102567",
-    "firstPrize": "482962"
+    "firstPrize": "482962",
+    "twoDigits": "00",
+    "threeFront": [
+      "648",
+      "561"
+    ],
+    "threeBack": [
+      "919",
+      "493"
+    ],
+    "nearFirst": [
+      "482961",
+      "482963"
+    ]
   },
   {
     "date": "01112567",
-    "firstPrize": "536044"
+    "firstPrize": "536044",
+    "twoDigits": "32",
+    "threeFront": [
+      "174",
+      "225"
+    ],
+    "threeBack": [
+      "063",
+      "231"
+    ],
+    "nearFirst": [
+      "536043",
+      "536045"
+    ]
   },
   {
     "date": "16112567",
-    "firstPrize": "187221"
+    "firstPrize": "187221",
+    "twoDigits": "38",
+    "threeFront": [
+      "036",
+      "923"
+    ],
+    "threeBack": [
+      "980",
+      "547"
+    ],
+    "nearFirst": [
+      "187220",
+      "187222"
+    ]
   },
   {
     "date": "01122567",
-    "firstPrize": "669843"
+    "firstPrize": "669843",
+    "twoDigits": "61",
+    "threeFront": [
+      "559",
+      "626"
+    ],
+    "threeBack": [
+      "098",
+      "654"
+    ],
+    "nearFirst": [
+      "669842",
+      "669844"
+    ]
   },
   {
     "date": "16122567",
-    "firstPrize": "097863"
+    "firstPrize": "097863",
+    "twoDigits": "21",
+    "threeFront": [
+      "290",
+      "742"
+    ],
+    "threeBack": [
+      "339",
+      "881"
+    ],
+    "nearFirst": [
+      "097862",
+      "097864"
+    ]
   },
   {
     "date": "02012568",
-    "firstPrize": "730209"
+    "firstPrize": "730209",
+    "twoDigits": "51",
+    "threeFront": [
+      "446",
+      "065"
+    ],
+    "threeBack": [
+      "376",
+      "297"
+    ],
+    "nearFirst": [
+      "730208",
+      "730210"
+    ]
   },
   {
     "date": "17012568",
-    "firstPrize": "807779"
+    "firstPrize": "807779",
+    "twoDigits": "23",
+    "threeFront": [
+      "699",
+      "961"
+    ],
+    "threeBack": [
+      "448",
+      "477"
+    ],
+    "nearFirst": [
+      "807778",
+      "807780"
+    ]
   },
   {
     "date": "01022568",
-    "firstPrize": "558700"
+    "firstPrize": "558700",
+    "twoDigits": "51",
+    "threeFront": [
+      "285",
+      "418"
+    ],
+    "threeBack": [
+      "824",
+      "685"
+    ],
+    "nearFirst": [
+      "558699",
+      "558701"
+    ]
   },
   {
     "date": "16022568",
-    "firstPrize": "847377"
+    "firstPrize": "847377",
+    "twoDigits": "50",
+    "threeFront": [
+      "268",
+      "613"
+    ],
+    "threeBack": [
+      "652",
+      "001"
+    ],
+    "nearFirst": [
+      "847376",
+      "847378"
+    ]
   },
   {
     "date": "01032568",
-    "firstPrize": "818894"
+    "firstPrize": "818894",
+    "twoDigits": "54",
+    "threeFront": [
+      "139",
+      "530"
+    ],
+    "threeBack": [
+      "781",
+      "656"
+    ],
+    "nearFirst": [
+      "818893",
+      "818895"
+    ]
   },
   {
     "date": "16032568",
-    "firstPrize": "757563"
+    "firstPrize": "757563",
+    "twoDigits": "32",
+    "threeFront": [
+      "595",
+      "927"
+    ],
+    "threeBack": [
+      "457",
+      "309"
+    ],
+    "nearFirst": [
+      "757562",
+      "757564"
+    ]
   },
   {
     "date": "01042568",
-    "firstPrize": "669687"
+    "firstPrize": "669687",
+    "twoDigits": "36",
+    "threeFront": [
+      "635",
+      "760"
+    ],
+    "threeBack": [
+      "180",
+      "666"
+    ],
+    "nearFirst": [
+      "669686",
+      "669688"
+    ]
   },
   {
     "date": "16042568",
-    "firstPrize": "266227"
+    "firstPrize": "266227",
+    "twoDigits": "85",
+    "threeFront": [
+      "413",
+      "254"
+    ],
+    "threeBack": [
+      "474",
+      "760"
+    ],
+    "nearFirst": [
+      "266226",
+      "266228"
+    ]
   },
   {
     "date": "02052568",
-    "firstPrize": "213388"
+    "firstPrize": "213388",
+    "twoDigits": "06",
+    "threeFront": [
+      "826",
+      "116"
+    ],
+    "threeBack": [
+      "167",
+      "662"
+    ],
+    "nearFirst": [
+      "213387",
+      "213389"
+    ]
   },
   {
     "date": "16052568",
-    "firstPrize": "251309"
+    "firstPrize": "251309",
+    "twoDigits": "87",
+    "threeFront": [
+      "109",
+      "231"
+    ],
+    "threeBack": [
+      "965",
+      "631"
+    ],
+    "nearFirst": [
+      "251308",
+      "251310"
+    ]
   },
   {
     "date": "01062568",
-    "firstPrize": "559352"
+    "firstPrize": "559352",
+    "twoDigits": "20",
+    "threeFront": [
+      "349",
+      "134"
+    ],
+    "threeBack": [
+      "307",
+      "044"
+    ],
+    "nearFirst": [
+      "559351",
+      "559353"
+    ]
   },
   {
     "date": "16062568",
-    "firstPrize": "507392"
+    "firstPrize": "507392",
+    "twoDigits": "06",
+    "threeFront": [
+      "243",
+      "017"
+    ],
+    "threeBack": [
+      "299",
+      "736"
+    ],
+    "nearFirst": [
+      "507391",
+      "507393"
+    ]
   },
   {
     "date": "01072568",
-    "firstPrize": "949246"
+    "firstPrize": "949246",
+    "twoDigits": "91",
+    "threeFront": [
+      "680",
+      "169"
+    ],
+    "threeBack": [
+      "918",
+      "261"
+    ],
+    "nearFirst": [
+      "949245",
+      "949247"
+    ]
   },
   {
     "date": "16072568",
-    "firstPrize": "245324"
+    "firstPrize": "245324",
+    "twoDigits": "26",
+    "threeFront": [
+      "995",
+      "171"
+    ],
+    "threeBack": [
+      "084",
+      "336"
+    ],
+    "nearFirst": [
+      "245323",
+      "245325"
+    ]
   },
   {
     "date": "01082568",
-    "firstPrize": "811852"
+    "firstPrize": "811852",
+    "twoDigits": "50",
+    "threeFront": [
+      "525",
+      "142"
+    ],
+    "threeBack": [
+      "891",
+      "512"
+    ],
+    "nearFirst": [
+      "811851",
+      "811853"
+    ]
   },
   {
     "date": "16082568",
-    "firstPrize": "994865"
+    "firstPrize": "994865",
+    "twoDigits": "63",
+    "threeFront": [
+      "247",
+      "602"
+    ],
+    "threeBack": [
+      "834",
+      "989"
+    ],
+    "nearFirst": [
+      "994864",
+      "994866"
+    ]
   },
   {
     "date": "01092568",
-    "firstPrize": "506356"
+    "firstPrize": "506356",
+    "twoDigits": "31",
+    "threeFront": [
+      "131",
+      "012"
+    ],
+    "threeBack": [
+      "022",
+      "209"
+    ],
+    "nearFirst": [
+      "506355",
+      "506357"
+    ]
   },
   {
     "date": "16092568",
-    "firstPrize": "074646"
+    "firstPrize": "074646",
+    "twoDigits": "58",
+    "threeFront": [
+      "740",
+      "512"
+    ],
+    "threeBack": [
+      "308",
+      "703"
+    ],
+    "nearFirst": [
+      "074645",
+      "074647"
+    ]
   },
   {
     "date": "01102568",
-    "firstPrize": "876978"
+    "firstPrize": "876978",
+    "twoDigits": "77",
+    "threeFront": [
+      "843",
+      "532"
+    ],
+    "threeBack": [
+      "280",
+      "605"
+    ],
+    "nearFirst": [
+      "876977",
+      "876979"
+    ]
   },
   {
     "date": "16102568",
-    "firstPrize": "059696"
+    "firstPrize": "059696",
+    "twoDigits": "61",
+    "threeFront": [
+      "531",
+      "955"
+    ],
+    "threeBack": [
+      "476",
+      "889"
+    ],
+    "nearFirst": [
+      "059695",
+      "059697"
+    ]
   },
   {
     "date": "01112568",
-    "firstPrize": "345898"
+    "firstPrize": "345898",
+    "twoDigits": "87",
+    "threeFront": [
+      "449",
+      "328"
+    ],
+    "threeBack": [
+      "111",
+      "690"
+    ],
+    "nearFirst": [
+      "345897",
+      "345899"
+    ]
   },
   {
     "date": "16112568",
-    "firstPrize": "458145"
+    "firstPrize": "458145",
+    "twoDigits": "37",
+    "threeFront": [
+      "242",
+      "602"
+    ],
+    "threeBack": [
+      "239",
+      "389"
+    ],
+    "nearFirst": [
+      "458144",
+      "458146"
+    ]
   },
   {
     "date": "01122568",
-    "firstPrize": "461252"
+    "firstPrize": "461252",
+    "twoDigits": "22",
+    "threeFront": [
+      "655",
+      "389"
+    ],
+    "threeBack": [
+      "137",
+      "995"
+    ],
+    "nearFirst": [
+      "461251",
+      "461253"
+    ]
   },
   {
     "date": "16122568",
-    "firstPrize": "763895"
+    "firstPrize": "763895",
+    "twoDigits": "52",
+    "threeFront": [
+      "431",
+      "176"
+    ],
+    "threeBack": [
+      "014",
+      "449"
+    ],
+    "nearFirst": [
+      "763894",
+      "763896"
+    ]
+  },
+  {
+    "date": "02012569",
+    "firstPrize": "837706",
+    "twoDigits": "16",
+    "threeFront": [
+      "694",
+      "347"
+    ],
+    "threeBack": [
+      "288",
+      "765"
+    ],
+    "nearFirst": [
+      "837705",
+      "837707"
+    ]
+  },
+  {
+    "date": "16012569",
+    "firstPrize": "878972",
+    "twoDigits": "02",
+    "threeFront": [
+      "299",
+      "815"
+    ],
+    "threeBack": [
+      "662",
+      "363"
+    ],
+    "nearFirst": [
+      "837706"
+    ]
+  },
+  {
+    "date": "01022569",
+    "firstPrize": "174629",
+    "twoDigits": "48",
+    "threeFront": [
+      "917",
+      "195"
+    ],
+    "threeBack": [
+      "408",
+      "041"
+    ],
+    "nearFirst": [
+      "174628",
+      "174630"
+    ]
+  },
+  {
+    "date": "16022569",
+    "firstPrize": "340563",
+    "twoDigits": "07",
+    "threeFront": [
+      "527",
+      "241"
+    ],
+    "threeBack": [
+      "578",
+      "169"
+    ],
+    "nearFirst": [
+      "340562",
+      "340564"
+    ]
+  },
+  {
+    "date": "01032569",
+    "firstPrize": "820866",
+    "twoDigits": "06",
+    "threeFront": [
+      "479",
+      "054"
+    ],
+    "threeBack": [
+      "068",
+      "837"
+    ],
+    "nearFirst": [
+      "820865",
+      "820867"
+    ]
+  },
+  {
+    "date": "16032569",
+    "firstPrize": "833009",
+    "twoDigits": "64",
+    "threeFront": [
+      "510",
+      "983"
+    ],
+    "threeBack": [
+      "439",
+      "954"
+    ],
+    "nearFirst": [
+      "833008",
+      "833010"
+    ]
+  },
+  {
+    "date": "01042569",
+    "firstPrize": "292514",
+    "twoDigits": "47",
+    "threeFront": [
+      "406",
+      "113"
+    ],
+    "threeBack": [
+      "851",
+      "098"
+    ],
+    "nearFirst": [
+      "292513",
+      "292515"
+    ]
+  },
+  {
+    "date": "16042569",
+    "firstPrize": "309612",
+    "twoDigits": "77",
+    "threeFront": [
+      "355",
+      "108"
+    ],
+    "threeBack": [
+      "868",
+      "424"
+    ],
+    "nearFirst": [
+      "309611",
+      "309613"
+    ]
+  },
+  {
+    "date": "02052569",
+    "firstPrize": "536077",
+    "twoDigits": "43",
+    "threeFront": [
+      "267",
+      "318"
+    ],
+    "threeBack": [
+      "065",
+      "153"
+    ],
+    "nearFirst": [
+      "536076",
+      "536078"
+    ]
+  },
+  {
+    "date": "16052569",
+    "firstPrize": "107387",
+    "twoDigits": "08",
+    "threeFront": [
+      "091",
+      "298"
+    ],
+    "threeBack": [
+      "602",
+      "716"
+    ],
+    "nearFirst": [
+      "107386",
+      "107388"
+    ]
+  },
+  {
+    "date": "01062569",
+    "firstPrize": "173770",
+    "twoDigits": "95",
+    "threeFront": [
+      "848",
+      "415"
+    ],
+    "threeBack": [
+      "410",
+      "938"
+    ],
+    "nearFirst": [
+      "173769",
+      "173771"
+    ]
+  },
+  {
+    "date": "16062569",
+    "firstPrize": "287184",
+    "twoDigits": "48",
+    "threeFront": [
+      "758",
+      "434"
+    ],
+    "threeBack": [
+      "007",
+      "721"
+    ],
+    "nearFirst": [
+      "287183",
+      "287185"
+    ]
+  },
+  {
+    "date": "01072569",
+    "firstPrize": "751495",
+    "twoDigits": "62",
+    "threeFront": [
+      "001",
+      "980"
+    ],
+    "threeBack": [
+      "304",
+      "531"
+    ],
+    "nearFirst": [
+      "751494",
+      "751496"
+    ]
+  },
+  {
+    "date": "16072569",
+    "firstPrize": "639214",
+    "twoDigits": "71",
+    "threeFront": [
+      "683",
+      "709"
+    ],
+    "threeBack": [
+      "746",
+      "427"
+    ],
+    "nearFirst": [
+      "639213",
+      "639215"
+    ]
+  },
+  {
+    "date": "01082569",
+    "firstPrize": "932479",
+    "twoDigits": "69",
+    "threeFront": [
+      "413",
+      "672"
+    ],
+    "threeBack": [
+      "154",
+      "039"
+    ],
+    "nearFirst": [
+      "932478",
+      "932480"
+    ]
+  },
+  {
+    "date": "16082569",
+    "firstPrize": "004615",
+    "twoDigits": "53",
+    "threeFront": [
+      "731",
+      "429"
+    ],
+    "threeBack": [
+      "937",
+      "094"
+    ],
+    "nearFirst": [
+      "004614",
+      "004616"
+    ]
+  },
+  {
+    "date": "01092569",
+    "firstPrize": "417212",
+    "twoDigits": "04",
+    "threeFront": [
+      "257",
+      "346"
+    ],
+    "threeBack": [
+      "136",
+      "740"
+    ],
+    "nearFirst": [
+      "417211",
+      "417213"
+    ]
   }
 ]

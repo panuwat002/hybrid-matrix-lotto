@@ -8,8 +8,10 @@ import { ResultCard } from "./ResultCard";
 import { FeaturedPrize } from "./FeaturedPrize";
 import { ResultHeader } from "./ResultHeader";
 import { SupportSection } from "./SupportSection";
+import { ModelSelector } from "./ModelSelector";
+import { BacktestModal } from "./BacktestModal";
 import { trackEvent } from "@/lib/analytics/events";
-import type { MatrixResult } from "@/lib/types";
+import type { FormulaModelId, MatrixResult } from "@/lib/types";
 
 function defaultDate(): string {
   const now = new Date();
@@ -25,6 +27,7 @@ type ResultBundle = { data: MatrixResult; computedAt: Date };
 
 export function DashboardClient() {
   const [date, setDate] = useState(defaultDate);
+  const [modelId, setModelId] = useState<FormulaModelId>("hybrid-matrix");
   const [result, setResult] = useState<ResultBundle | null>(null);
   const [error, setError] = useState<string | null>(null);
   const pickerRef = useRef<HTMLDivElement>(null);
@@ -51,6 +54,7 @@ export function DashboardClient() {
           ← หน้าหลัก
         </Link>
         <div className="flex items-center gap-4">
+          <BacktestModal />
           <Link
             href="/about"
             className="font-thai text-xs text-matrix-cyan/70 transition hover:text-matrix-cyan"
@@ -72,10 +76,12 @@ export function DashboardClient() {
         ANALYSIS DASHBOARD
       </h1>
 
-      <div ref={pickerRef} className="mx-auto mb-12 max-w-xl space-y-4">
+      <div ref={pickerRef} className="mx-auto mb-12 max-w-xl space-y-5">
         <DateSelector value={date} onChange={setDate} />
+        <ModelSelector value={modelId} onChange={setModelId} />
         <GenerateButton
           date={date}
+          modelId={modelId}
           onResult={(r) => {
             setResult({ data: r, computedAt: new Date() });
             setError(null);
@@ -98,6 +104,7 @@ export function DashboardClient() {
             targetDate={result.data.targetDate}
             tensionScore={result.data.tensionScore}
             computedAt={result.computedAt}
+            modelId={result.data.modelId ?? modelId}
           />
           <div className="mx-auto max-w-5xl space-y-4">
             <FeaturedPrize

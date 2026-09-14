@@ -10,6 +10,7 @@
     "lint": "next lint",
     "test": "vitest run",
     "test:watch": "vitest",
+    "backtest": "node scripts/run-backtest.mjs",
     "audit": "pnpm audit --prod",
     "audit:full": "pnpm audit",
     "outdated": "pnpm outdated"

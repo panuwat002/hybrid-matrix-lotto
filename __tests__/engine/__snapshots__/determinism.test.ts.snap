@@ -3,20 +3,20 @@
 exports[`determinism (golden snapshot) > full snapshot for 16082569 stays stable 1`] = `
 {
   "adjacent": [
-    "112290",
-    "112292",
+    "129445",
+    "129447",
   ],
   "backThree": [
-    "832",
+    "855",
     "576",
   ],
-  "backTwo": "85",
-  "firstPrize": "112291",
+  "backTwo": "65",
+  "firstPrize": "129446",
   "frontThree": [
-    "600",
-    "004",
+    "404",
+    "360",
   ],
   "targetDate": "16082569",
-  "tensionScore": 89.4,
+  "tensionScore": 89.7,
 }
 `;

@@ -1,12 +1,13 @@
 "use client";
 
-import type { DrawDate } from "@/lib/types";
+import type { DrawDate, FormulaModelId } from "@/lib/types";
 import { formatThaiDate } from "@/lib/format";
 
 type Props = {
   targetDate: DrawDate;
   tensionScore: number;
   computedAt: Date;
+  modelId?: FormulaModelId;
 };
 
 function formatTime(d: Date): string {
@@ -15,16 +16,22 @@ function formatTime(d: Date): string {
   return `${hh}:${mm}`;
 }
 
-export function ResultHeader({ targetDate, tensionScore, computedAt }: Props) {
+export function ResultHeader({ targetDate, tensionScore, computedAt, modelId }: Props) {
   const clamped = Math.max(0, Math.min(100, tensionScore));
+  const modelLabel = modelId === "adaptive-frequency" ? "Adaptive Frequency" : "Hybrid Matrix";
 
   return (
     <div className="mx-auto mb-6 max-w-5xl border-b border-matrix-cyan/20 pb-4">
       <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
-          <span className="font-thai text-[10px] uppercase tracking-[0.3em] text-matrix-cyan/70">
-            งวด
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="font-thai text-[10px] uppercase tracking-[0.3em] text-matrix-cyan/70">
+              งวด
+            </span>
+            <span className="rounded border border-matrix-green/30 bg-matrix-green/10 px-2 py-0.5 font-mono text-[10px] text-matrix-green">
+              {modelLabel}
+            </span>
+          </div>
           <h2 className="mt-1 font-mono text-2xl text-matrix-green md:text-3xl">
             {formatThaiDate(targetDate)}
           </h2>

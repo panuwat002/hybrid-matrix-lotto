@@ -3,22 +3,23 @@
 import { useTransition } from "react";
 import { generateMatrix } from "@/lib/actions/generateMatrix";
 import { trackEvent } from "@/lib/analytics/events";
-import type { MatrixResult } from "@/lib/types";
+import type { FormulaModelId, MatrixResult } from "@/lib/types";
 
 type Props = {
   date: string;
+  modelId?: FormulaModelId;
   onResult: (r: MatrixResult) => void;
   onError: (msg: string) => void;
 };
 
-export function GenerateButton({ date, onResult, onError }: Props) {
+export function GenerateButton({ date, modelId = "hybrid-matrix", onResult, onError }: Props) {
   const [pending, startTransition] = useTransition();
 
   const run = () => {
     startTransition(async () => {
       try {
-        const r = await generateMatrix(date);
-        trackEvent("matrix_generated", { targetDate: date });
+        const r = await generateMatrix(date, modelId);
+        trackEvent("matrix_generated", { targetDate: date, modelId });
         onResult(r);
       } catch (err) {
         const msg = err instanceof Error ? err.message : "UNKNOWN";
