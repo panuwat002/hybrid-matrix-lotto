@@ -10,6 +10,7 @@ import { ResultHeader } from "./ResultHeader";
 import { SupportSection } from "./SupportSection";
 import { ModelSelector } from "./ModelSelector";
 import { BacktestModal } from "./BacktestModal";
+import { CandidateNumbers } from "./CandidateNumbers";
 import { trackEvent } from "@/lib/analytics/events";
 import type { FormulaModelId, MatrixResult } from "@/lib/types";
 
@@ -111,6 +112,9 @@ export function DashboardClient() {
               firstPrize={result.data.firstPrize}
               adjacent={result.data.adjacent}
             />
+            {result.data.candidates && result.data.candidates.length > 0 && (
+              <CandidateNumbers candidates={result.data.candidates} />
+            )}
             <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
               <ResultCard
                 title="เลขหน้า 3 ตัว"
@@ -126,6 +130,7 @@ export function DashboardClient() {
                 title="เลขท้าย 2 ตัว"
                 numbers={[result.data.backTwo]}
                 kind="back2"
+                coverageSet={result.data.backTwoSet}
               />
             </div>
           </div>

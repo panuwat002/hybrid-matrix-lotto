@@ -3,6 +3,7 @@ import type { DrawDate, FormulaModelId, HistoricalDraw, MatrixResult, ModelInfo 
 import HISTORICAL from "@/lib/data/historical.json";
 import { calculateHybridMatrix } from "../index";
 import { calculateAdaptiveFrequency } from "./adaptiveFrequency";
+import { calculateStatisticalBoost } from "./statisticalBoost";
 
 export const AVAILABLE_MODELS: ModelInfo[] = [
   {
@@ -17,6 +18,12 @@ export const AVAILABLE_MODELS: ModelInfo[] = [
     description: "โมเดลความถี่ถ่วงน้ำหนักตามกาลเวลา (Time-Decay Recency) และความน่าจะเป็นของคู่ตัวเลข",
     badge: "Tuned Frequency",
   },
+  {
+    id: "statistical-boost",
+    name: "Statistical Boost (สูตรเร่งพลังสถิติ)",
+    description: "Ensemble 3 สัญญาณ: Markov Transition + Gap Pressure + Exponential Recency พร้อมเลขเสริมโชค 4 ชุด",
+    badge: "Ensemble ×5",
+  },
 ];
 
 export function calculateWithModel(
@@ -28,6 +35,10 @@ export function calculateWithModel(
     return calculateAdaptiveFrequency(targetDate, draws);
   }
 
+  if (modelId === "statistical-boost") {
+    return calculateStatisticalBoost(targetDate, draws);
+  }
+
   // default: hybrid-matrix
   const res = calculateHybridMatrix(targetDate);
   return {
@@ -35,3 +46,4 @@ export function calculateWithModel(
     modelId: "hybrid-matrix",
   };
 }
+

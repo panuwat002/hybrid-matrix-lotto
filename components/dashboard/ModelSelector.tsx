@@ -23,6 +23,13 @@ export function ModelSelector({ value, onChange }: Props) {
       subtitle: "สถิติความถี่ถ่วงน้ำหนักตามกาลเวลา (Time-Decay)",
       desc: "สูตรปรับจูน เน้นคู่เลขเด่นและแนวโน้มที่ออกบ่อยย้อนหลัง",
     },
+    {
+      id: "statistical-boost" as FormulaModelId,
+      name: "Statistical Boost",
+      tag: "Ensemble ×5",
+      subtitle: "Markov + Gap Pressure + Exponential Recency",
+      desc: "สูตรเร่งพลัง สร้างเลข 5 ชุด เลือกชุดที่ดีที่สุด + เลขเสริมโชค",
+    },
   ];
 
   return (
@@ -30,7 +37,7 @@ export function ModelSelector({ value, onChange }: Props) {
       <label className="block font-thai text-xs tracking-wider text-matrix-cyan/80">
         เลือกสูตร / โมเดลการคำนวณ
       </label>
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
         {models.map((m) => {
           const isSelected = value === m.id;
           return (

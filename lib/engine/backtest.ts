@@ -30,13 +30,15 @@ export function runBacktest(
   const testDraws = draws.slice(startIndex, endIndex);
   const totalTestCount = testDraws.length;
 
-  const models: FormulaModelId[] = ["hybrid-matrix", "adaptive-frequency"];
+  const models: FormulaModelId[] = ["hybrid-matrix", "adaptive-frequency", "statistical-boost"];
 
   const initialCounts = (): HitCategoryCount => ({
     totalDraws: totalTestCount,
     firstPrizeExact: 0,
     adjacentHits: 0,
     backTwoExact: 0,
+    backTwoReversedHits: 0,
+    backTwoSetHits: 0,
     topTwoExact: 0,
     frontThreeHits: 0,
     backThreeHits: 0,
@@ -47,6 +49,17 @@ export function runBacktest(
   const modelCounts: Record<FormulaModelId, HitCategoryCount> = {
     "hybrid-matrix": initialCounts(),
     "adaptive-frequency": initialCounts(),
+    "statistical-boost": initialCounts(),
+  };
+
+  // Track candidate hits for statistical-boost
+  let candidateFirstPrizeHits = 0;
+
+  // Accumulated size of each model's back-two coverage set, for the chance baseline
+  const setSizeTotals: Record<FormulaModelId, number> = {
+    "hybrid-matrix": 0,
+    "adaptive-frequency": 0,
+    "statistical-boost": 0,
   };
 
   for (let i = startIndex; i < endIndex; i++) {
@@ -89,6 +102,22 @@ export function runBacktest(
       // 3. 2-digit bottom (2 ตัวล่าง)
       if (pred.backTwo === actualTwo) {
         counts.backTwoExact++;
+      }
+
+      // 3b. Reversed headline pair (เลขกลับ) — tracked apart from an exact hit
+      if (`${pred.backTwo[1]}${pred.backTwo[0]}` === actualTwo) {
+        counts.backTwoReversedHits++;
+      }
+
+      // 3c. Coverage set. A model that ships no set covers exactly one pair,
+      // so its set rate collapses onto its exact rate and its baseline is 1%.
+      const coverageSet =
+        pred.backTwoSet && pred.backTwoSet.length > 0
+          ? pred.backTwoSet
+          : [pred.backTwo];
+      setSizeTotals[modelId] += coverageSet.length;
+      if (coverageSet.includes(actualTwo)) {
+        counts.backTwoSetHits++;
       }
 
       // 4. 2-digit top (2 ตัวบน)
@@ -141,6 +170,15 @@ export function runBacktest(
     const n = Math.max(1, totalTestCount);
 
     const backTwoRate = Number(((c.backTwoExact / n) * 100).toFixed(2));
+    const backTwoReversedRate = Number(
+      ((c.backTwoReversedHits / n) * 100).toFixed(2),
+    );
+    const backTwoSetRate = Number(((c.backTwoSetHits / n) * 100).toFixed(2));
+    // A set of k pairs covers k/100 of the space for free. Report that alongside
+    // the set rate so a wider net never reads as a sharper model.
+    const backTwoSetBaselineRate = Number(
+      ((setSizeTotals[modelId] / n) * 1).toFixed(2),
+    );
     const topTwoRate = Number(((c.topTwoExact / n) * 100).toFixed(2));
     const frontThreeRate = Number(((c.frontThreeHits / n) * 100).toFixed(2));
     const backThreeRate = Number(((c.backThreeHits / n) * 100).toFixed(2));
@@ -167,6 +205,9 @@ export function runBacktest(
       metrics: c,
       rates: {
         backTwoRate,
+        backTwoReversedRate,
+        backTwoSetRate,
+        backTwoSetBaselineRate,
         topTwoRate,
         frontThreeRate,
         backThreeRate,

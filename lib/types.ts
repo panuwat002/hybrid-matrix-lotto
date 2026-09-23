@@ -1,6 +1,6 @@
 export type DrawDate = string; // "DDMMYYYY" BE, e.g. "16082569"
 
-export type FormulaModelId = "hybrid-matrix" | "adaptive-frequency";
+export type FormulaModelId = "hybrid-matrix" | "adaptive-frequency" | "statistical-boost";
 
 export type MatrixResult = {
   targetDate: DrawDate;
@@ -9,8 +9,15 @@ export type MatrixResult = {
   frontThree: [string, string];
   backThree: [string, string];
   backTwo: string;
+  /**
+   * Coverage set for the 2-digit prize: the top-ranked pairs plus the reversed
+   * form of each. Closed under reversal, deduped, `backTwoSet[0] === backTwo`.
+   * Wider coverage, not higher accuracy — see backtest baseline reporting.
+   */
+  backTwoSet?: string[];
   tensionScore: number;
   modelId?: FormulaModelId;
+  candidates?: string[]; // additional high-probability first prize candidates
 };
 
 export type HistoricalDraw = {
@@ -34,6 +41,8 @@ export type HitCategoryCount = {
   firstPrizeExact: number;
   adjacentHits: number;
   backTwoExact: number;
+  backTwoReversedHits: number;
+  backTwoSetHits: number;
   topTwoExact: number;
   frontThreeHits: number;
   backThreeHits: number;
@@ -47,6 +56,10 @@ export type ModelBacktestSummary = {
   metrics: HitCategoryCount;
   rates: {
     backTwoRate: number;
+    backTwoReversedRate: number;
+    backTwoSetRate: number;
+    /** Chance-level coverage of the set: mean set size, in percent. */
+    backTwoSetBaselineRate: number;
     topTwoRate: number;
     frontThreeRate: number;
     backThreeRate: number;

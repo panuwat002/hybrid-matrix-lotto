@@ -156,6 +156,154 @@ function runAdaptiveFrequency(targetDate, draws) {
   };
 }
 
+function runStatisticalBoost(targetDate, draws) {
+  const N_CANDIDATES = 10;
+  const N_BACK_TWO_RANKED = 5;
+  const total = draws.length;
+  const lastDraw = draws[total - 1];
+
+  // Exponential recency-weighted positional frequency
+  const positionalScores = Array.from({ length: 6 }, () => new Array(10).fill(0));
+  const digitScores = new Array(10).fill(0);
+
+  draws.forEach((draw, idx) => {
+    const recencyWeight = Math.exp(((idx - total + 1) / total) * 3) + 0.1;
+    for (let pos = 0; pos < 6; pos++) {
+      const d = Number(draw.firstPrize[pos]);
+      if (!Number.isNaN(d)) {
+        positionalScores[pos][d] += recencyWeight;
+        digitScores[d] += recencyWeight;
+      }
+    }
+  });
+
+  // Markov transition matrix per position (Laplace smoothed)
+  const transitions = Array.from({ length: 6 }, () =>
+    Array.from({ length: 10 }, () => new Array(10).fill(1))
+  );
+  for (let i = 1; i < draws.length; i++) {
+    const prev = draws[i - 1].firstPrize;
+    const curr = draws[i].firstPrize;
+    const recency = Math.exp(((i - total + 1) / total) * 2) + 0.1;
+    for (let pos = 0; pos < 6; pos++) {
+      const prevD = Number(prev[pos]);
+      const currD = Number(curr[pos]);
+      if (!Number.isNaN(prevD) && !Number.isNaN(currD)) {
+        transitions[pos][prevD][currD] += recency;
+      }
+    }
+  }
+
+  // Gap pressure per position
+  const gapPressure = Array.from({ length: 6 }, () => new Array(10).fill(0));
+  for (let pos = 0; pos < 6; pos++) {
+    for (let d = 0; d < 10; d++) {
+      let gap = total;
+      for (let i = total - 1; i >= 0; i--) {
+        if (Number(draws[i].firstPrize[pos]) === d) {
+          gap = total - 1 - i;
+          break;
+        }
+      }
+      gapPressure[pos][d] = Math.pow(gap + 1, 1.3);
+    }
+  }
+
+  // Ensemble scores
+  const ensembleScores = Array.from({ length: 6 }, () => new Array(10).fill(0));
+  const lastDigits = lastDraw.firstPrize.split("").map(Number);
+  for (let pos = 0; pos < 6; pos++) {
+    const prevDigit = lastDigits[pos];
+    for (let d = 0; d < 10; d++) {
+      const freqSignal = positionalScores[pos][d];
+      const markovSignal = !Number.isNaN(prevDigit) ? transitions[pos][prevDigit][d] : 1;
+      const gapSignal = gapPressure[pos][d];
+      ensembleScores[pos][d] = freqSignal * 0.4 + markovSignal * 0.35 + gapSignal * 0.25;
+    }
+  }
+
+  // Deterministic seed
+  let seed = 0;
+  for (let i = 0; i < targetDate.length; i++) {
+    seed = (seed * 31 + targetDate.charCodeAt(i)) >>> 0;
+  }
+  const prng = (s) => () => {
+    let t = (s += 0x6d2b79f5);
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+  const rand = prng(seed);
+
+  const weightedSample = (scores) => {
+    const totalScore = scores.reduce((a, b) => a + b, 0);
+    let threshold = rand() * totalScore;
+    for (let d = 0; d < 10; d++) {
+      threshold -= scores[d];
+      if (threshold <= 0) return d;
+    }
+    return 9;
+  };
+
+  // Generate N candidates
+  const candidateScoreMap = [];
+  for (let c = 0; c < N_CANDIDATES; c++) {
+    const digits = [];
+    let totalCandidateScore = 0;
+    for (let pos = 0; pos < 6; pos++) {
+      const d = weightedSample(ensembleScores[pos]);
+      digits.push(d);
+      totalCandidateScore += ensembleScores[pos][d];
+    }
+    candidateScoreMap.push({ num: digits.join(""), score: totalCandidateScore });
+  }
+  candidateScoreMap.sort((a, b) => b.score - a.score);
+
+  const firstPrize = candidateScoreMap[0].num;
+  const candidates = candidateScoreMap.slice(1).map(c => c.num);
+  const pNum = Number(firstPrize);
+  const low = String((pNum - 1 + 1_000_000) % 1_000_000).padStart(6, "0");
+  const high = String((pNum + 1) % 1_000_000).padStart(6, "0");
+
+  // Pair frequency for back-2
+  const pairFreq = new Map();
+  draws.forEach((draw, idx) => {
+    const recency = Math.exp(((idx - total + 1) / total) * 3) + 0.1;
+    const pEnd = draw.firstPrize.slice(-2);
+    pairFreq.set(pEnd, (pairFreq.get(pEnd) ?? 0) + recency);
+    if (draw.twoDigits && draw.twoDigits.length === 2) {
+      pairFreq.set(draw.twoDigits, (pairFreq.get(draw.twoDigits) ?? 0) + recency * 2.0);
+    }
+  });
+  const sortedPairs = Array.from(pairFreq.entries()).sort((a, b) => b[1] - a[1]);
+  const ranked = sortedPairs.slice(0, N_BACK_TWO_RANKED).map(([pair]) => pair);
+  if (ranked.length === 0) ranked.push(firstPrize.slice(-2));
+
+  // Each ranked pair drags its reversed form (เลขกลับ) in with it.
+  const backTwoSet = [];
+  for (const pair of ranked) {
+    for (const cand of [pair, `${pair[1]}${pair[0]}`]) {
+      if (!backTwoSet.includes(cand)) backTwoSet.push(cand);
+    }
+  }
+  const backTwo = backTwoSet[0];
+
+  const f1 = `${weightedSample(ensembleScores[0])}${weightedSample(ensembleScores[1])}${weightedSample(ensembleScores[2])}`;
+  const f2 = `${weightedSample(ensembleScores[1])}${weightedSample(ensembleScores[2])}${weightedSample(ensembleScores[3])}`;
+  const b1 = `${weightedSample(ensembleScores[3])}${weightedSample(ensembleScores[4])}${weightedSample(ensembleScores[5])}`;
+  const b2 = `${weightedSample(ensembleScores[2])}${weightedSample(ensembleScores[4])}${weightedSample(ensembleScores[5])}`;
+
+  return {
+    firstPrize,
+    adjacent: [low, high],
+    frontThree: [f1, f2],
+    backThree: [b1, b2],
+    backTwo,
+    backTwoSet,
+    candidates,
+  };
+}
+
 function main() {
   const dataPath = "lib/data/historical.json";
   const draws = JSON.parse(readFileSync(dataPath, "utf8"));
@@ -165,7 +313,7 @@ function main() {
   const N = testDraws.length;
 
   console.log("================================================================================");
-  console.log("           HYBRID MATRIX LOTTO — 10-YEAR HISTORICAL BACKTEST BENCHMARK          ");
+  console.log("    HYBRID MATRIX LOTTO — 10-YEAR HISTORICAL BACKTEST BENCHMARK (3 MODELS)      ");
   console.log("================================================================================");
   console.log(`Total Draws in Archive:  ${draws.length} draws`);
   console.log(`Evaluated (Walk-Forward): ${N} draws (Start: ${testDraws[0].date} → End: ${testDraws[N - 1].date})`);
@@ -175,6 +323,7 @@ function main() {
   const models = [
     { id: "hybrid", name: "Hybrid Matrix (φ³)", runner: runHybridMatrix },
     { id: "adaptive", name: "Adaptive Frequency", runner: runAdaptiveFrequency },
+    { id: "boost", name: "Statistical Boost", runner: runStatisticalBoost },
   ];
 
   const results = {};
@@ -183,11 +332,15 @@ function main() {
       firstPrizeExact: 0,
       adjacentHits: 0,
       backTwoExact: 0,
+      backTwoReversedHits: 0,
+      backTwoSetHits: 0,
+      setSizeTotal: 0,
       topTwoExact: 0,
       frontThreeHits: 0,
       backThreeHits: 0,
       runningOneHits: 0,
       runningTwoHits: 0,
+      candidateHits: 0,
     };
   }
 
@@ -214,6 +367,12 @@ function main() {
       if (pred.firstPrize === actualFirst) res.firstPrizeExact++;
       if (actualNear.includes(pred.firstPrize) || pred.adjacent.includes(actualFirst)) res.adjacentHits++;
       if (pred.backTwo === actualTwo) res.backTwoExact++;
+      if (`${pred.backTwo[1]}${pred.backTwo[0]}` === actualTwo) res.backTwoReversedHits++;
+
+      // A model with no coverage set covers exactly one pair: baseline 1%.
+      const coverageSet = pred.backTwoSet && pred.backTwoSet.length > 0 ? pred.backTwoSet : [pred.backTwo];
+      res.setSizeTotal += coverageSet.length;
+      if (coverageSet.includes(actualTwo)) res.backTwoSetHits++;
       if (pred.backTwo === actualTopTwo) res.topTwoExact++;
       if (actualFront3.includes(pred.frontThree[0]) || actualFront3.includes(pred.frontThree[1])) res.frontThreeHits++;
       if (actualBack3.includes(pred.backThree[0]) || actualBack3.includes(pred.backThree[1])) res.backThreeHits++;
@@ -226,6 +385,14 @@ function main() {
       if (actualFirst.includes(d1) && actualFirst.includes(d2)) {
         res.runningTwoHits++;
       }
+
+      // Track candidate hits (any of 5 numbers match first prize)
+      if (pred.candidates && pred.candidates.length > 0) {
+        const allNums = [pred.firstPrize, ...pred.candidates];
+        if (allNums.some(n => n === actualFirst)) {
+          res.candidateHits++;
+        }
+      }
     }
   }
 
@@ -233,50 +400,74 @@ function main() {
 
   const metrics = [
     { label: "เลขท้าย 2 ตัวล่าง (ตรงเป๊ะ)", key: "backTwoExact" },
+    { label: "เลขท้าย 2 ตัวล่าง (เลขกลับ)", key: "backTwoReversedHits" },
+    { label: "เลขท้าย 2 ตัวล่าง (นับทั้งชุด)", key: "backTwoSetHits" },
+    { label: "  └ เส้นฐานสุ่มล้วนของชุด (ควรชนะเส้นนี้)", key: "__baseline" },
     { label: "เลขท้าย 2 ตัวบน (ท้ายรางวัลที่ 1)", key: "topTwoExact" },
     { label: "เลขหน้า 3 ตัว (ตรง 1 ใน 2 ชุด)", key: "frontThreeHits" },
     { label: "เลขท้าย 3 ตัว (ตรง 1 ใน 2 ชุด)", key: "backThreeHits" },
-    { label: "เลขวิ่ง 1 ตัว (ติดในรางวัลที่ 1 หรือ 2 ตัวล่าง)", key: "runningOneHits" },
-    { label: "เลขวิ่ง 2 ตัว (ติดในรางวัลที่ 1 ครบทั้ง 2 ตัว)", key: "runningTwoHits" },
+    { label: "เลขวิ่ง 1 ตัว (ติดในรางวัลที่ 1/2ตัวล่าง)", key: "runningOneHits" },
+    { label: "เลขวิ่ง 2 ตัว (ติดในรางวัลที่ 1 ครบ2ตัว)", key: "runningTwoHits" },
     { label: "รางวัลที่ 1 (ตรงเป๊ะ 6 หลัก)", key: "firstPrizeExact" },
+    { label: "★ รางวัลที่1 (10 ชุดรวม, Boost only)", key: "candidateHits" },
   ];
 
-  console.log("+------------------------------------------------+-----------------+-----------------+---------------+");
-  console.log("| หมวดรางวัลที่วัดผล                             | Hybrid Matrix   | Adaptive Freq   | เปรียบเทียบ   |");
-  console.log("+------------------------------------------------+-----------------+-----------------+---------------+");
+  console.log("+------------------------------------------------+-----------------+-----------------+-----------------+");
+  console.log("| หมวดรางวัลที่วัดผล                             | Hybrid Matrix   | Adaptive Freq   | Stat. Boost     |");
+  console.log("+------------------------------------------------+-----------------+-----------------+-----------------+");
 
   for (const m of metrics) {
+    // The chance baseline is a coverage percentage, not a hit count: a set of
+    // k pairs covers k/100 of the space for free.
+    if (m.key === "__baseline") {
+      const cols = ["hybrid", "adaptive", "boost"].map((id) =>
+        `${(results[id].setSizeTotal / N).toFixed(2)}%`.padStart(15, " "),
+      );
+      console.log(`| ${m.label.padEnd(46, " ")} | ${cols.join(" | ")} |`);
+      continue;
+    }
+
     const hHits = results.hybrid[m.key];
     const aHits = results.adaptive[m.key];
+    const bHits = results.boost[m.key];
     const hRate = calcRate(hHits);
     const aRate = calcRate(aHits);
+    const bRate = calcRate(bHits);
 
-    let winner = "สูสีกัน";
-    if (Number(aRate) > Number(hRate)) winner = "Adaptive (+)";
-    else if (Number(hRate) > Number(aRate)) winner = "Hybrid (+)";
+    const rates = [
+      { name: "Hybrid", rate: Number(hRate) },
+      { name: "Adaptive", rate: Number(aRate) },
+      { name: "Boost", rate: Number(bRate) },
+    ];
+    const maxRate = Math.max(...rates.map(r => r.rate));
+    const winners = rates.filter(r => r.rate === maxRate).map(r => r.name);
+    let winner = winners.length === 3 ? "สูสี" : winners.join("/") + " (+)";
 
     const labelPad = m.label.padEnd(46, " ");
     const hCol = `${hRate}% (${hHits})`.padStart(15, " ");
     const aCol = `${aRate}% (${aHits})`.padStart(15, " ");
-    const wCol = winner.padEnd(13, " ");
+    const bCol = `${bRate}% (${bHits})`.padStart(15, " ");
 
-    console.log(`| ${labelPad} | ${hCol} | ${aCol} | ${wCol} |`);
+    console.log(`| ${labelPad} | ${hCol} | ${aCol} | ${bCol} |`);
   }
-  console.log("+------------------------------------------------+-----------------+-----------------+---------------+");
+  console.log("+------------------------------------------------+-----------------+-----------------+-----------------+");
 
   console.log("\n================================================================================");
   console.log("                          ข้อสรุปเชิงสถิติ (INSIGHTS)                           ");
   console.log("================================================================================");
-  console.log("1. 'งวดที่ผ่านมาเลขไม่เข้าเป้า คำนวณสูตรใหม่ดีไหม?'");
-  console.log("   -> คำตอบ: สลากกินแบ่งมีความแปรปรวนสุ่ม (Stochasticity) การไม่เข้าใน 1 งวด");
-  console.log("      ไม่ได้แปลว่าสูตรพัง และการปรับสูตรตามงวดเดียวจะทำให้เกิด Overfitting ทันที");
-  console.log("2. เมื่อดูสถิติ 10 ปีย้อนหลัง (210+ งวด):");
-  console.log("   -> โมเดล Adaptive Frequency มีความโดดเด่นใน 'เลขวิ่ง' และ 'เลขท้าย 2 ตัว'");
-  console.log("   -> โมเดล Hybrid Matrix ให้การกระจายตัวของตัวเลข 6 หลักที่สมดุลและเป็นไปตามทฤษฎีควอนตัมคณิตศาสตร์");
-  console.log("3. โซลูชันที่ปรับปรุงในระบบ:");
-  console.log("   -> เพิ่มปุ่มเลือกโมเดล (Model Selector) บนหน้าเว็บ Dashboard ให้สลับใช้ได้ตามชอบ");
-  console.log("   -> แสดงตารางรายงาน Backtest ให้ผู้ใช้สามารถตรวจสอบความน่าจะเป็นได้จริงตลอดเวลา");
+  console.log("1. Statistical Boost ใช้ Ensemble ของ 3 สัญญาณ:");
+  console.log("   → Markov Transition: เลขอะไรมักตามหลังเลขอะไร ณ แต่ละตำแหน่ง");
+  console.log("   → Gap Pressure: เลขที่ไม่ออกนานจะมีแรงกดดันสะสม (ยิ่งนาน ยิ่งมีโอกาส)");
+  console.log("   → Exponential Recency: ให้น้ำหนักงวดล่าสุดมากเป็นพิเศษ (แทนที่จะเป็นเส้นตรง)");
+  console.log("2. วิธีอ่านแถว 'นับทั้งชุด':");
+  console.log("   → ชุด k คู่ ครอบคลุม k/100 ของพื้นที่เลขอยู่แล้วโดยไม่ต้องมีสูตร");
+  console.log("   → ตัวเลขนั้นคือ 'เส้นฐานสุ่มล้วน' ใต้แถว — ถ้าไม่ชนะเส้นนี้ชัดๆ");
+  console.log("     แปลว่าได้มาจากการแทงกว้างขึ้น ไม่ใช่จากสูตรที่แม่นขึ้น");
+  console.log("3. รางวัลที่ 1 ตรงเป๊ะ 6 หลัก คือ 1/1,000,000 ต่อชุด และแต่ละงวดเป็นอิสระต่อกัน");
+  console.log("   → ยิง 10 ชุด × 215 งวด = 2,150 ใบ ค่าคาดหวังที่จะเข้า ≈ 0.002 ครั้ง");
+  console.log("   → แถว 'รางวัลที่1' ที่เป็น 0.00% จึงเป็นผลตามทฤษฎี ไม่ใช่จุดที่จูนให้ดีขึ้นได้");
   console.log("================================================================================\n");
 }
 
 main();
+

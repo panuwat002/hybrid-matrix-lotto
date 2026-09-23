@@ -26,4 +26,37 @@ describe("Backtest Engine", () => {
     expect(report.winnerId).toBeDefined();
     expect(report.recommendation).toBeTruthy();
   });
+
+  describe("back-two coverage metrics", () => {
+    const report = () =>
+      runBacktest(HISTORICAL as any, { minHistoryWindow: 30, maxTestDraws: 50 });
+
+    it("counts a set hit wherever an exact hit was counted", () => {
+      const r = report();
+      (["hybrid-matrix", "adaptive-frequency", "statistical-boost"] as const).forEach(
+        (id) => {
+          const m = r.summaries[id].metrics;
+          expect(m.backTwoSetHits).toBeGreaterThanOrEqual(m.backTwoExact);
+        },
+      );
+    });
+
+    it("counts reversed back-two hits separately", () => {
+      const m = report().summaries["statistical-boost"].metrics;
+      expect(m.backTwoReversedHits).toBeGreaterThanOrEqual(0);
+      expect(m.backTwoReversedHits).toBeLessThanOrEqual(m.totalDraws);
+    });
+
+    it("reports a chance-level baseline of 1% for models with no coverage set", () => {
+      const rates = report().summaries["hybrid-matrix"].rates;
+      expect(rates.backTwoSetBaselineRate).toBe(1);
+      expect(rates.backTwoSetRate).toBe(rates.backTwoRate);
+    });
+
+    it("reports a wider-than-chance baseline for the model that ships a set", () => {
+      const rates = report().summaries["statistical-boost"].rates;
+      expect(rates.backTwoSetBaselineRate).toBeGreaterThan(1);
+      expect(rates.backTwoSetBaselineRate).toBeLessThanOrEqual(100);
+    });
+  });
 });

@@ -138,6 +138,13 @@ export function BacktestModal() {
                             aHits: a.metrics.backTwoExact,
                           },
                           {
+                            title: "เลขท้าย 2 ตัวล่าง (เลขกลับ)",
+                            hRate: h.rates.backTwoReversedRate,
+                            hHits: h.metrics.backTwoReversedHits,
+                            aRate: a.rates.backTwoReversedRate,
+                            aHits: a.metrics.backTwoReversedHits,
+                          },
+                          {
                             title: "เลขท้าย 2 ตัวบน (ตรงท้ายรางวัลที่ 1)",
                             hRate: h.rates.topTwoRate,
                             hHits: h.metrics.topTwoExact,

@@ -18,7 +18,11 @@ function formatTime(d: Date): string {
 
 export function ResultHeader({ targetDate, tensionScore, computedAt, modelId }: Props) {
   const clamped = Math.max(0, Math.min(100, tensionScore));
-  const modelLabel = modelId === "adaptive-frequency" ? "Adaptive Frequency" : "Hybrid Matrix";
+  const modelLabel = modelId === "adaptive-frequency"
+    ? "Adaptive Frequency"
+    : modelId === "statistical-boost"
+      ? "Statistical Boost"
+      : "Hybrid Matrix";
 
   return (
     <div className="mx-auto mb-6 max-w-5xl border-b border-matrix-cyan/20 pb-4">
