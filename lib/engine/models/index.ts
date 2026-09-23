@@ -21,8 +21,8 @@ export const AVAILABLE_MODELS: ModelInfo[] = [
   {
     id: "statistical-boost",
     name: "Statistical Boost (สูตรเร่งพลังสถิติ)",
-    description: "Ensemble 3 สัญญาณ: Markov Transition + Gap Pressure + Exponential Recency พร้อมเลขเสริมโชค 4 ชุด",
-    badge: "Ensemble ×5",
+    description: "Ensemble 3 สัญญาณ: Markov Transition + Gap Pressure + Exponential Recency พร้อมชุดผู้ท้าชิงอีก 9 ชุด และชุดเลขท้าย 2 ตัวพร้อมเลขกลับ",
+    badge: "Ensemble ×10",
   },
 ];
 

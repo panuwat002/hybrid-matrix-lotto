@@ -26,9 +26,9 @@ export function ModelSelector({ value, onChange }: Props) {
     {
       id: "statistical-boost" as FormulaModelId,
       name: "Statistical Boost",
-      tag: "Ensemble ×5",
+      tag: "Ensemble ×10",
       subtitle: "Markov + Gap Pressure + Exponential Recency",
-      desc: "สูตรเร่งพลัง สร้างเลข 5 ชุด เลือกชุดที่ดีที่สุด + เลขเสริมโชค",
+      desc: "สูตรเร่งพลัง สร้างเลข 10 ชุด เลือกชุดที่ดีที่สุด + ชุดเลขท้าย 2 ตัวพร้อมเลขกลับ",
     },
   ];
 

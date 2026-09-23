@@ -97,3 +97,20 @@ describe("Statistical Boost — back-two coverage set", () => {
     expect(r.candidates!.length).toBe(9);
   });
 });
+
+describe("Statistical Boost — advertised set size", () => {
+  const boost = () =>
+    calculateWithModel("statistical-boost", "16082569", HISTORICAL as any);
+
+  it("badges the number of sets it actually produces", () => {
+    const info = AVAILABLE_MODELS.find((m) => m.id === "statistical-boost")!;
+    const advertised = Number(info.badge.match(/×(\d+)/)?.[1]);
+    expect(advertised).toBe(boost().candidates!.length + 1);
+  });
+
+  it("describes the number of extra sets it actually produces", () => {
+    const info = AVAILABLE_MODELS.find((m) => m.id === "statistical-boost")!;
+    const advertised = Number(info.description.match(/(\d+)\s*ชุด/)?.[1]);
+    expect(advertised).toBe(boost().candidates!.length);
+  });
+});
