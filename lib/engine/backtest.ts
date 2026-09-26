@@ -7,6 +7,7 @@ import type {
   ModelBacktestSummary,
 } from "@/lib/types";
 import { AVAILABLE_MODELS, calculateWithModel } from "./models";
+import { normalizeDraw, scorePrediction } from "./hitRules";
 
 export function runBacktest(
   draws: HistoricalDraw[],
@@ -66,97 +67,25 @@ export function runBacktest(
     const actual = draws[i];
     const historicalSnapshot = draws.slice(0, i); // Strictly prevent lookahead bias
 
-    const actualFirst = actual.firstPrize;
-    const actualTwo = actual.twoDigits ?? actualFirst.slice(-2);
-    const actualTopTwo = actualFirst.slice(-2);
-    const actualFront3 = actual.threeFront && actual.threeFront.length > 0
-      ? actual.threeFront
-      : [actualFirst.slice(0, 3)];
-    const actualBack3 = actual.threeBack && actual.threeBack.length > 0
-      ? actual.threeBack
-      : [actualFirst.slice(-3)];
-    const actualNear = actual.nearFirst && actual.nearFirst.length > 0
-      ? actual.nearFirst
-      : [
-          String((Number(actualFirst) - 1 + 1_000_000) % 1_000_000).padStart(6, "0"),
-          String((Number(actualFirst) + 1) % 1_000_000).padStart(6, "0"),
-        ];
+    const a = normalizeDraw(actual);
 
     for (const modelId of models) {
       const pred = calculateWithModel(modelId, actual.date, historicalSnapshot);
       const counts = modelCounts[modelId];
+      const score = scorePrediction(pred, a);
 
-      // 1. Exact 1st prize
-      if (pred.firstPrize === actualFirst) {
-        counts.firstPrizeExact++;
-      }
+      if (score.firstPrizeExact) counts.firstPrizeExact++;
+      if (score.adjacentHit) counts.adjacentHits++;
+      if (score.backTwoExact) counts.backTwoExact++;
+      if (score.backTwoReversed) counts.backTwoReversedHits++;
+      if (score.backTwoSetHit) counts.backTwoSetHits++;
+      if (score.topTwoExact) counts.topTwoExact++;
+      if (score.frontThreeHit) counts.frontThreeHits++;
+      if (score.backThreeHit) counts.backThreeHits++;
+      if (score.runningOneHit) counts.runningOneHits++;
+      if (score.runningTwoHit) counts.runningTwoHits++;
 
-      // 2. Adjacent 1st prize
-      if (
-        actualNear.includes(pred.firstPrize) ||
-        pred.adjacent.includes(actualFirst)
-      ) {
-        counts.adjacentHits++;
-      }
-
-      // 3. 2-digit bottom (2 ตัวล่าง)
-      if (pred.backTwo === actualTwo) {
-        counts.backTwoExact++;
-      }
-
-      // 3b. Reversed headline pair (เลขกลับ) — tracked apart from an exact hit
-      if (`${pred.backTwo[1]}${pred.backTwo[0]}` === actualTwo) {
-        counts.backTwoReversedHits++;
-      }
-
-      // 3c. Coverage set. A model that ships no set covers exactly one pair,
-      // so its set rate collapses onto its exact rate and its baseline is 1%.
-      const coverageSet =
-        pred.backTwoSet && pred.backTwoSet.length > 0
-          ? pred.backTwoSet
-          : [pred.backTwo];
-      setSizeTotals[modelId] += coverageSet.length;
-      if (coverageSet.includes(actualTwo)) {
-        counts.backTwoSetHits++;
-      }
-
-      // 4. 2-digit top (2 ตัวบน)
-      if (pred.backTwo === actualTopTwo) {
-        counts.topTwoExact++;
-      }
-
-      // 5. 3-digit front
-      if (
-        actualFront3.includes(pred.frontThree[0]) ||
-        actualFront3.includes(pred.frontThree[1])
-      ) {
-        counts.frontThreeHits++;
-      }
-
-      // 6. 3-digit back
-      if (
-        actualBack3.includes(pred.backThree[0]) ||
-        actualBack3.includes(pred.backThree[1])
-      ) {
-        counts.backThreeHits++;
-      }
-
-      // 7. Running 1-digit
-      const d1 = pred.backTwo[0];
-      const d2 = pred.backTwo[1];
-      if (
-        actualFirst.includes(d1) ||
-        actualFirst.includes(d2) ||
-        actualTwo.includes(d1) ||
-        actualTwo.includes(d2)
-      ) {
-        counts.runningOneHits++;
-      }
-
-      // 8. Running 2-digit
-      if (actualFirst.includes(d1) && actualFirst.includes(d2)) {
-        counts.runningTwoHits++;
-      }
+      setSizeTotals[modelId] += score.coverageSize;
     }
   }
 

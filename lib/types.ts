@@ -77,3 +77,60 @@ export type BacktestComparisonReport = {
   winnerId: FormulaModelId;
   recommendation: string;
 };
+
+/** One model's outcome on one published draw. */
+export type ModelScore = {
+  firstPrizeExact: boolean;
+  adjacentHit: boolean;
+  backTwoExact: boolean;
+  backTwoReversed: boolean;
+  backTwoSetHit: boolean;
+  /** How many pairs the model played — the chance baseline for backTwoSetHit. */
+  coverageSize: number;
+  topTwoExact: boolean;
+  frontThreeHit: boolean;
+  backThreeHit: boolean;
+  runningOneHit: boolean;
+  runningTwoHit: boolean;
+};
+
+/**
+ * What the site served for one draw, captured before that draw was published.
+ * This is a log, not a recomputation: changing a formula must never change a
+ * row that is already here.
+ */
+export type RecordedPrediction = {
+  date: DrawDate;
+  /** ISO date the row was written. */
+  recordedAt: string;
+  models: Partial<Record<FormulaModelId, MatrixResult>>;
+};
+
+/** One recorded draw, scored once its result is published. */
+export type DrawScore = {
+  date: DrawDate;
+  recordedAt: string;
+  /** null while the draw has not been published yet. */
+  actual: HistoricalDraw | null;
+  /** null for a model that was not recorded, or while the draw is pending. */
+  models: Partial<Record<FormulaModelId, ModelScore | null>>;
+};
+
+export type ScorecardTotals = {
+  drawsScored: number;
+  firstPrizeExact: number;
+  adjacentHits: number;
+  backTwoExact: number;
+  backTwoReversed: number;
+  backTwoSetHits: number;
+  frontThreeHits: number;
+  backThreeHits: number;
+  /** Mean coverage size, in percent — what the set would hit by chance alone. */
+  backTwoSetBaselineRate: number;
+};
+
+export type Scorecard = {
+  /** Newest draw first. */
+  rows: DrawScore[];
+  totals: Record<FormulaModelId, ScorecardTotals>;
+};
