@@ -5,7 +5,6 @@ import { formatThaiDate } from "@/lib/format";
 
 type Props = {
   targetDate: DrawDate;
-  tensionScore: number;
   computedAt: Date;
   modelId?: FormulaModelId;
 };
@@ -16,8 +15,7 @@ function formatTime(d: Date): string {
   return `${hh}:${mm}`;
 }
 
-export function ResultHeader({ targetDate, tensionScore, computedAt, modelId }: Props) {
-  const clamped = Math.max(0, Math.min(100, tensionScore));
+export function ResultHeader({ targetDate, computedAt, modelId }: Props) {
   const modelLabel = modelId === "adaptive-frequency"
     ? "Adaptive Frequency"
     : modelId === "statistical-boost"
@@ -42,19 +40,6 @@ export function ResultHeader({ targetDate, tensionScore, computedAt, modelId }: 
           <p className="mt-1 font-thai text-[11px] text-matrix-green/70">
             คำนวณเมื่อ {formatTime(computedAt)} น.
           </p>
-        </div>
-
-        <div className="min-w-[240px] md:max-w-xs md:flex-1">
-          <div className="mb-1 flex items-baseline justify-between font-mono text-[10px] text-matrix-cyan/70">
-            <span className="tracking-widest">STATISTICAL TENSION</span>
-            <span className="text-matrix-cyan">{clamped.toFixed(2)}%</span>
-          </div>
-          <div className="h-2 overflow-hidden rounded bg-matrix-dim">
-            <div
-              className="h-full bg-matrix-cyan shadow-[0_0_10px_#00d4ff]"
-              style={{ width: `${clamped}%` }}
-            />
-          </div>
         </div>
       </div>
     </div>

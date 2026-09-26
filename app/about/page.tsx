@@ -78,6 +78,27 @@ export default function AboutPage() {
       </section>
 
       <section className="mb-10">
+        <h2 className="mb-3 font-thai text-lg text-matrix-green">
+          Statistical Tension คืออะไร
+        </h2>
+        <div className="space-y-3 rounded-lg border border-matrix-cyan/20 bg-matrix-dim/50 p-5 font-thai text-sm leading-relaxed text-matrix-green/85">
+          <p>
+            เป็นค่าที่วัด<b>ความเบ้ของชุดข้อมูลย้อนหลัง</b> — เลขตัวไหนออกถี่หรือห่างจากค่าเฉลี่ยมากแค่ไหน
+            ในผลรางวัลที่ผ่านมาทั้งหมด
+          </p>
+          <p>
+            <b className="text-matrix-cyan">ค่านี้ไม่เปลี่ยนตามงวดที่เลือก</b>{" "}
+            เพราะคำนวณจากสถิติย้อนหลังอย่างเดียว ไม่ได้เกี่ยวกับวันงวดเป้าหมาย
+            เดิมหน้าผลลัพธ์เคยแสดงค่านี้เป็นแถบข้างๆ วันงวด ซึ่งทำให้เข้าใจผิดว่าเป็นค่าประจำงวดนั้น
+            จึงเอาออกแล้ว
+          </p>
+          <p className="text-matrix-green/60">
+            ค่าของแต่ละสูตรคำนวณคนละวิธีและอยู่คนละสเกล จึงเอามาเทียบกันตรงๆ ไม่ได้
+          </p>
+        </div>
+      </section>
+
+      <section className="mb-10">
         <h2 className="mb-3 font-thai text-lg text-matrix-green">สูตรโดยย่อ</h2>
         <div className="space-y-3 rounded-lg border border-matrix-cyan/20 bg-matrix-dim/50 p-5 font-mono text-xs leading-relaxed text-matrix-green/85">
           <div>

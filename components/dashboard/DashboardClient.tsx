@@ -103,7 +103,6 @@ export function DashboardClient() {
         <div ref={resultsRef}>
           <ResultHeader
             targetDate={result.data.targetDate}
-            tensionScore={result.data.tensionScore}
             computedAt={result.computedAt}
             modelId={result.data.modelId ?? modelId}
           />
