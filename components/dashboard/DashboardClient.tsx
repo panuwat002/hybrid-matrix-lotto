@@ -57,6 +57,12 @@ export function DashboardClient() {
         <div className="flex items-center gap-4">
           <BacktestModal />
           <Link
+            href="/history"
+            className="font-thai text-xs text-matrix-cyan/70 transition hover:text-matrix-cyan"
+          >
+            ย้อนดูงวดก่อน
+          </Link>
+          <Link
             href="/about"
             className="font-thai text-xs text-matrix-cyan/70 transition hover:text-matrix-cyan"
           >
