@@ -1,1 +1,88 @@
-[]
+[
+  {
+    "date": "01102569",
+    "recordedAt": "2026-09-26",
+    "models": {
+      "hybrid-matrix": {
+        "targetDate": "01102569",
+        "firstPrize": "348607",
+        "adjacent": [
+          "348606",
+          "348608"
+        ],
+        "frontThree": [
+          "345",
+          "129"
+        ],
+        "backThree": [
+          "627",
+          "236"
+        ],
+        "backTwo": "70",
+        "tensionScore": 89.7,
+        "modelId": "hybrid-matrix"
+      },
+      "adaptive-frequency": {
+        "targetDate": "01102569",
+        "firstPrize": "906125",
+        "adjacent": [
+          "906124",
+          "906126"
+        ],
+        "frontThree": [
+          "637",
+          "560"
+        ],
+        "backThree": [
+          "452",
+          "342"
+        ],
+        "backTwo": "46",
+        "tensionScore": 28.74,
+        "modelId": "adaptive-frequency"
+      },
+      "statistical-boost": {
+        "targetDate": "01102569",
+        "firstPrize": "758931",
+        "adjacent": [
+          "758930",
+          "758932"
+        ],
+        "frontThree": [
+          "657",
+          "637"
+        ],
+        "backThree": [
+          "703",
+          "891"
+        ],
+        "backTwo": "06",
+        "backTwoSet": [
+          "06",
+          "60",
+          "79",
+          "97",
+          "61",
+          "16",
+          "64",
+          "46",
+          "14",
+          "41"
+        ],
+        "tensionScore": 10,
+        "modelId": "statistical-boost",
+        "candidates": [
+          "865021",
+          "035933",
+          "045233",
+          "535061",
+          "806034",
+          "246635",
+          "865845",
+          "005529",
+          "122948"
+        ]
+      }
+    }
+  }
+]
