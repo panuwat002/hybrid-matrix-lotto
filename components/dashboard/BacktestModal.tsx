@@ -253,7 +253,7 @@ export function BacktestModal() {
                       <strong>2. ผลการทดสอบ 10 ปีจริง:</strong> {report.recommendation}
                     </p>
                     <p>
-                      <strong>3. คำแนะนำในการใช้งาน:</strong> ท่านสามารถสลับเลือกโมเดลที่ต้องการได้ทันทีจากหน้าจอ Dashboard หากต้องการเน้นความถี่เลขเด่นให้เลือก <em>Adaptive Frequency</em> หรือหากต้องการพลังแห่งค่าคงที่ควอนตัมให้เลือก <em>Hybrid Matrix</em>
+                      <strong>3. คำแนะนำในการใช้งาน:</strong> ท่านสามารถสลับเลือกโมเดลที่ต้องการได้ทันทีจากหน้าจอ Dashboard หากต้องการเน้นความถี่เลขเด่นให้เลือก <em>Adaptive Frequency</em> หรือหากต้องการผลที่คงที่ ไม่แกว่งตามความถี่ล่าสุด ให้เลือก <em>Hybrid Matrix</em>
                     </p>
                   </div>
                 </div>

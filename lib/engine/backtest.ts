@@ -226,10 +226,10 @@ export function runBacktest(
   const startDate = testDraws[0]?.date ?? "";
   const endDate = testDraws[testDraws.length - 1]?.date ?? "";
 
+  // The composite gap between models across this sample sits inside ordinary
+  // sampling noise, so naming a winner here would read as a finding it is not.
   const recommendation =
-    winnerId === "adaptive-frequency"
-      ? "โมเดล Adaptive Frequency มีอัตราเข้าเป้าสถิติรวมสูงกว่า โดยเฉพาะในหมวดเลขท้าย 2 ตัวและเลขวิ่ง แนะนำให้ใช้เป็นสูตรทางเลือกสำหรับผู้ที่เน้นสถิติความถี่"
-      : "โมเดล Hybrid Matrix (Deterministic φ³) ยังคงให้ค่ากระจายตัวของตัวเลขที่สม่ำเสมอและมีเอกลักษณ์สูง เหมาะเป็นสูตรหลัก";
+    "ความต่างระหว่างสูตรในการทดสอบนี้ยังอยู่ในช่วงความบังเอิญ ยังสรุปไม่ได้ว่าสูตรไหนดีกว่า — เลือกสูตรที่คุณเข้าใจที่มาของมันมากที่สุด";
 
   return {
     testedDrawsCount: totalTestCount,

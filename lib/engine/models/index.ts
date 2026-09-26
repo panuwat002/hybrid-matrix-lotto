@@ -20,7 +20,7 @@ export const AVAILABLE_MODELS: ModelInfo[] = [
   },
   {
     id: "statistical-boost",
-    name: "Statistical Boost (สูตรเร่งพลังสถิติ)",
+    name: "Statistical Boost (สูตรรวมสัญญาณสถิติ)",
     description: "Ensemble 3 สัญญาณ: Markov Transition + Gap Pressure + Exponential Recency พร้อมชุดผู้ท้าชิงอีก 9 ชุด และชุดเลขท้าย 2 ตัวพร้อมเลขกลับ",
     badge: "Ensemble ×10",
   },

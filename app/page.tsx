@@ -29,15 +29,15 @@ export default function LandingPage() {
           HYBRID MATRIX
         </h1>
         <p className="mt-3 font-thai text-matrix-cyan">
-          ระบบวิเคราะห์ตัวเลขด้วย Deterministic Cosmic Algorithm
+          จัดลำดับความเป็นไปได้ของตัวเลข จากสถิติหวยย้อนหลัง 10 ปี
         </p>
       </header>
 
       {step === "hero" && (
         <section className="mx-auto max-w-2xl text-center">
           <p className="mb-6 font-thai text-matrix-green/80">
-            ผสานพลังของ Golden Ratio, Pi, และสถิติย้อนหลัง 10 ปี
-            เพื่อสกัดชุดตัวเลขที่มีแรงเค้นทางสถิติสูงสุด
+            จาก 1,000,000 ความเป็นไปได้ ระบบจัดลำดับด้วยสถิติจริง 245 งวด
+            เหลือชุดที่อธิบายที่มาได้
           </p>
 
           <div className="mb-8 inline-flex flex-wrap items-center justify-center gap-2 rounded-lg border border-matrix-cyan/25 bg-matrix-dim/40 px-4 py-2 font-mono text-xs">
